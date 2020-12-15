@@ -26,28 +26,16 @@ namespace MesUI
             if (Dao.Employee.VerifyIdPassword(usrIdText.Text, passwdText.Text))
             {
                 MessageBox.Show(Dao.Employee.GetName(usrIdText.Text) + "님 안녕하세요!", "로그인 성공");
-                ((Form1)(this.MdiParent)).loginState = true;
-                ((Form1)(this.MdiParent)).ShowForm("loginForm2");
-
-                //TabControl tab = null;
-                //foreach (Control c in this.Controls)
-                //{
-                //    if (c is TabControl)
-                //    {
-                //        tab = (TabControl)c;
-                //        break;
-                //    }
-                //}
-
-                //TabItem item = new TabItem { Header = i.ToString(), Name = $"tab{i}" };
-                ((Form1)(this.MdiParent)).HideLoginForm();
+                ((MainForm)(this.MdiParent)).loginState = true;
+                ((MainForm)(this.MdiParent)).ShowForm("loginForm2");
+                ((MainForm)(this.MdiParent)).HideLoginForm();
 
 
             }
             else
             {
                 MessageBox.Show("ID 또는 암호가 틀렸습니다!", "로그인 실패");
-                ((Form1)(this.MdiParent)).loginState = false;
+                ((MainForm)(this.MdiParent)).loginState = false;
             }
         }
 
