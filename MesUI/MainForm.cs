@@ -43,8 +43,8 @@ namespace MesUI
             loginForm.MdiParent = this;
             dictForm.Add("loginForm", loginForm);
 
-            loginForm.Width = 900;
-            loginForm.Height = 600;
+            //loginForm.Width = 900;
+            //loginForm.Height = 600;
 
             LogInForm2 login2Form = new LogInForm2();
             login2Form.MdiParent = this;
@@ -71,6 +71,7 @@ namespace MesUI
             else if (loginState == false)
             {
                 this.Show();
+                MessageBox.Show("로그인이 필요합니다.");
             }
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
