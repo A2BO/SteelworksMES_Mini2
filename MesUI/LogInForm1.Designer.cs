@@ -43,11 +43,11 @@ namespace MesUI
             // loginButton
             // 
             this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.loginButton.Font = new System.Drawing.Font("Gulim", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.loginButton.Location = new System.Drawing.Point(412, 241);
+            this.loginButton.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.loginButton.Location = new System.Drawing.Point(471, 301);
             this.loginButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(125, 45);
+            this.loginButton.Size = new System.Drawing.Size(143, 56);
             this.loginButton.TabIndex = 3;
             this.loginButton.Text = "로그인";
             this.loginButton.UseVisualStyleBackColor = false;
@@ -55,28 +55,29 @@ namespace MesUI
             // 
             // usrIdText
             // 
-            this.usrIdText.Location = new System.Drawing.Point(281, 240);
+            this.usrIdText.Location = new System.Drawing.Point(321, 300);
             this.usrIdText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.usrIdText.Name = "usrIdText";
-            this.usrIdText.Size = new System.Drawing.Size(125, 21);
+            this.usrIdText.Size = new System.Drawing.Size(142, 25);
             this.usrIdText.TabIndex = 1;
             // 
             // passwdText
             // 
-            this.passwdText.Location = new System.Drawing.Point(281, 265);
+            this.passwdText.Location = new System.Drawing.Point(321, 331);
             this.passwdText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passwdText.Name = "passwdText";
             this.passwdText.PasswordChar = '*';
-            this.passwdText.Size = new System.Drawing.Size(125, 21);
+            this.passwdText.Size = new System.Drawing.Size(142, 25);
             this.passwdText.TabIndex = 2;
+            this.passwdText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwdText_KeyDown);
             // 
             // tealLogo
             // 
             this.tealLogo.Image = ((System.Drawing.Image)(resources.GetObject("tealLogo.Image")));
-            this.tealLogo.Location = new System.Drawing.Point(233, 78);
+            this.tealLogo.Location = new System.Drawing.Point(266, 98);
             this.tealLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tealLogo.Name = "tealLogo";
-            this.tealLogo.Size = new System.Drawing.Size(330, 146);
+            this.tealLogo.Size = new System.Drawing.Size(377, 182);
             this.tealLogo.TabIndex = 2;
             this.tealLogo.TabStop = false;
             this.tealLogo.Click += new System.EventHandler(this.tealLogo_Click);
@@ -84,36 +85,36 @@ namespace MesUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gulim", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(188, 25);
+            this.label1.Font = new System.Drawing.Font("굴림", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(215, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(414, 35);
+            this.label1.Size = new System.Drawing.Size(518, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "원자재 재고 관리 시스템";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(231, 244);
+            this.label2.Location = new System.Drawing.Point(264, 305);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 12);
+            this.label2.Size = new System.Drawing.Size(55, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "직원 ID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(231, 268);
+            this.label3.Location = new System.Drawing.Point(264, 335);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(37, 15);
             this.label3.TabIndex = 0;
             this.label3.Text = "암호";
             // 
             // LogInForm1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 475);
+            this.ClientSize = new System.Drawing.Size(926, 594);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
