@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02DA58CA-C48B-4191-9556-C07AA0C1838D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MesUI</RootNamespace>
+    <AssemblyName>MesUI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogInForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogInForm1.Designer.cs">
+      <DependentUpon>LogInForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogInForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogInForm2.Designer.cs">
+      <DependentUpon>LogInForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialOrderManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialOrderManagement.Designer.cs">
+      <DependentUpon>MaterialOrderManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MesRegEx.cs" />
+    <Compile Include="OrderAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderAdd.Designer.cs">
+      <DependentUpon>OrderAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderModify.Designer.cs">
+      <DependentUpon>OrderModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceInfo.cs" />
+    <Compile Include="ResourceQuoteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceQuoteForm.Designer.cs">
+      <DependentUpon>ResourceQuoteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffManagement.Designer.cs">
+      <DependentUpon>StaffManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffResisterORModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffResisterORModify.Designer.cs">
+      <DependentUpon>StaffResisterORModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransactionModify.Designer.cs">
+      <DependentUpon>TransactionModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransactionStock.Designer.cs">
+      <DependentUpon>TransactionStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WarehouseManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarehouseManagement.Designer.cs">
+      <DependentUpon>WarehouseManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WarehouseModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarehouseModify.Designer.cs">
+      <DependentUpon>WarehouseModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WarehouseRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarehouseRegister.Designer.cs">
+      <DependentUpon>WarehouseRegister.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogInForm1.resx">
+      <DependentUpon>LogInForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogInForm2.resx">
+      <DependentUpon>LogInForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialOrderManagement.resx">
+      <DependentUpon>MaterialOrderManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderAdd.resx">
+      <DependentUpon>OrderAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderModify.resx">
+      <DependentUpon>OrderModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ResourceQuoteForm.resx">
+      <DependentUpon>ResourceQuoteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffManagement.resx">
+      <DependentUpon>StaffManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffResisterORModify.resx">
+      <DependentUpon>StaffResisterORModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionModify.resx">
+      <DependentUpon>TransactionModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionStock.resx">
+      <DependentUpon>TransactionStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarehouseManagement.resx">
+      <DependentUpon>WarehouseManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarehouseModify.resx">
+      <DependentUpon>WarehouseModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarehouseRegister.resx">
+      <DependentUpon>WarehouseRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.Dao.OrderDao.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.Dao.WareHouseDao.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.Order.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.Resource1.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.Transaction.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.WareHouse.datasource" />
+    <None Include="Properties\DataSources\ResourceQuoteForm.datasource" />
+    <None Include="Properties\DataSources\RfidReader.Form1.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MiniSteelworksMES.Data\MiniSteelworksMES.Data.csproj">
+      <Project>{78670a3d-434e-408d-a1a8-47be7b6810b7}</Project>
+      <Name>MiniSteelworksMES.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RfidReader\RfidReader.csproj">
+      <Project>{b60befc1-0ffa-421f-83f6-96d02cc743d6}</Project>
+      <Name>RfidReader</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
