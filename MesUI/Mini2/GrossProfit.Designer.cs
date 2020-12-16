@@ -29,10 +29,17 @@ namespace MesUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // GrossProfit
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1141, 660);
+            this.Name = "GrossProfit";
             this.Text = "GrossProfit";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

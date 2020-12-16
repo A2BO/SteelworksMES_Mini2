@@ -17,6 +17,7 @@ namespace MiniSteelworksMES.Data
         public int ExpenseId { get; set; }
         public int ExpenseLineId { get; set; }
         public System.DateTime Date { get; set; }
+        public int Cost { get; set; }
     
         public virtual ExpenseLine ExpenseLine { get; set; }
     }

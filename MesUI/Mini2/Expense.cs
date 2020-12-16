@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MiniSteelworksMES.Data.Dao;
 
 namespace MesUI
 {
-    public partial class Expense : Form
+    public partial class ExpenseForm : Form
     {
-        public Expense()
+        public ExpenseForm()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            bdsExpense.DataSource = Dao.expense.Search();
         }
     }
 }

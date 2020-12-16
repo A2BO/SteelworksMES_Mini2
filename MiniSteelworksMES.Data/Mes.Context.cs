@@ -25,19 +25,19 @@ namespace MiniSteelworksMES.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<Resource> Resources { get; set; }
-        public virtual DbSet<Transaction> Transactions { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<Resource_Quote> Resource_Quotes { get; set; }
         public virtual DbSet<Expense> Expenses { get; set; }
         public virtual DbSet<ExpenseLine> ExpenseLines { get; set; }
         public virtual DbSet<GrowthRate> GrowthRates { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductDetail> ProductDetails { get; set; }
         public virtual DbSet<ProductWareHouse> ProductWareHouses { get; set; }
+        public virtual DbSet<Resource> Resources { get; set; }
+        public virtual DbSet<Resource_Quote> Resource_Quotes { get; set; }
         public virtual DbSet<ResourceWareHouse> ResourceWareHouses { get; set; }
         public virtual DbSet<Sale> Sales { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
+        public virtual DbSet<Transaction> Transactions { get; set; }
     }
 }

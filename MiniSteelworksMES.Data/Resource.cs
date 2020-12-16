@@ -19,7 +19,6 @@ namespace MiniSteelworksMES.Data
         {
             this.Orders = new HashSet<Order>();
             this.Transactions = new HashSet<Transaction>();
-            this.Transactions1 = new HashSet<Transaction>();
         }
     
         public int ResourceId { get; set; }
@@ -32,7 +31,5 @@ namespace MiniSteelworksMES.Data
         public virtual ICollection<Order> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transaction> Transactions { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Transaction> Transactions1 { get; set; }
     }
 }

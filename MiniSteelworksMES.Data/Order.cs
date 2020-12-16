@@ -21,7 +21,7 @@ namespace MiniSteelworksMES.Data
         public int Quantity { get; set; }
         public string SellerName { get; set; }
     
-        public virtual Resource Resource { get; set; }
         public virtual Employee Employee { get; set; }
+        public virtual Resource Resource { get; set; }
     }
 }

@@ -139,7 +139,7 @@ namespace MesUI
 
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowChildForm(new Expense());
+            ShowChildForm(new ExpenseForm());
         }
 
         private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
