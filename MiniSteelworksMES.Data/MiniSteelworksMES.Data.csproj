@@ -60,7 +60,7 @@
     <Compile Include="Dao\Dao.cs" />
     <Compile Include="Dao\EmployeeDao.cs" />
     <Compile Include="Dao\ExpenseDao.cs" />
-    <Compile Include="Dao\ExpenseLineDao.cs" />
+    <Compile Include="Dao\ExpenseCategoryDao.cs" />
     <Compile Include="Dao\GrowthRateDao.cs" />
     <Compile Include="Dao\ProductDao.cs" />
     <Compile Include="Dao\OrderDao.cs" />
@@ -83,7 +83,7 @@
     </Compile>
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\Expense.cs" />
-    <Compile Include="Entities\ExpenseLine.cs" />
+    <Compile Include="Entities\ExpenseCategory.cs" />
     <Compile Include="Entities\GowthRate.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\Product.cs" />
@@ -98,7 +98,7 @@
     <Compile Include="Expense.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
-    <Compile Include="ExpenseLine.cs">
+    <Compile Include="ExpenseCategory.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="GrowthRate.cs">

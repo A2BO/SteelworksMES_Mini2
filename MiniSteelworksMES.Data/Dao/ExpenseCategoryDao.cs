@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace MiniSteelworksMES.Data.Dao
 {
-    public class ExpenseLineDao : SingleKeyDao<ExpenseLine, int>
+    public class ExpenseCategoryDao : SingleKeyDao<ExpenseCategory, int>
     {
-        protected override Expression<Func<ExpenseLine, int>> KeySelector => throw new NotImplementedException();
+        protected override Expression<Func<ExpenseCategory, int>> KeySelector => throw new NotImplementedException();
 
-        protected override Expression<Func<ExpenseLine, bool>> IsKey(int key)
+        protected override Expression<Func<ExpenseCategory, bool>> IsKey(int key)
         {
-            return x => x.ExpenseLineId == key;
+            return x => x.ExpenseCategoryId == key;
         }
 
-        public List<ExpenseLine> GetAll()
+        public List<ExpenseCategory> GetAll()
         {
             using (var context = new MesEntities())
             {
-                var query = from x in context.ExpenseLines
+                var query = from x in context.ExpenseCategories
                             select x;
 
                 return query.ToList();

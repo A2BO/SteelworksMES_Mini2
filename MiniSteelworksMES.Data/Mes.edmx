@@ -24,15 +24,15 @@
             <PropertyRef Name="ExpenseId" />
           </Key>
           <Property Name="ExpenseId" Type="int" Nullable="false" />
-          <Property Name="ExpenseLineId" Type="int" Nullable="false" />
+          <Property Name="ExpenseCategoryId" Type="int" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="Cost" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="ExpenseLine">
+        <EntityType Name="ExpenseCategory">
           <Key>
-            <PropertyRef Name="ExpenseLineId" />
+            <PropertyRef Name="ExpenseCategoryId" />
           </Key>
-          <Property Name="ExpenseLineId" Type="int" Nullable="false" />
+          <Property Name="ExpenseCategoryId" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="GrowthRate">
@@ -171,14 +171,14 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Expense_ExpenseLine">
-          <End Role="ExpenseLine" Type="Self.ExpenseLine" Multiplicity="1" />
+          <End Role="ExpenseCategory" Type="Self.ExpenseCategory" Multiplicity="1" />
           <End Role="Expense" Type="Self.Expense" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ExpenseLine">
-              <PropertyRef Name="ExpenseLineId" />
+            <Principal Role="ExpenseCategory">
+              <PropertyRef Name="ExpenseCategoryId" />
             </Principal>
             <Dependent Role="Expense">
-              <PropertyRef Name="ExpenseLineId" />
+              <PropertyRef Name="ExpenseCategoryId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -281,7 +281,7 @@
         <EntityContainer Name="MES01ModelStoreContainer">
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Expense" EntityType="Self.Expense" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ExpenseLine" EntityType="Self.ExpenseLine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExpenseCategory" EntityType="Self.ExpenseCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GrowthRate" EntityType="Self.GrowthRate" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
@@ -302,7 +302,7 @@
             <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
           <AssociationSet Name="FK_Expense_ExpenseLine" Association="Self.FK_Expense_ExpenseLine">
-            <End Role="ExpenseLine" EntitySet="ExpenseLine" />
+            <End Role="ExpenseCategory" EntitySet="ExpenseCategory" />
             <End Role="Expense" EntitySet="Expense" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Employee" Association="Self.FK_Order_Employee">
@@ -345,7 +345,7 @@
         <EntityContainer Name="MesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Employees" EntityType="MES01Model.Employee" />
           <EntitySet Name="Expenses" EntityType="MES01Model.Expense" />
-          <EntitySet Name="ExpenseLines" EntityType="MES01Model.ExpenseLine" />
+          <EntitySet Name="ExpenseCategories" EntityType="MES01Model.ExpenseCategory" />
           <EntitySet Name="GrowthRates" EntityType="MES01Model.GrowthRate" />
           <EntitySet Name="Orders" EntityType="MES01Model.Order" />
           <EntitySet Name="Products" EntityType="MES01Model.Product" />
@@ -374,7 +374,7 @@
             <End Role="Transaction" EntitySet="Transactions" />
           </AssociationSet>
           <AssociationSet Name="FK_Expense_ExpenseLine" Association="MES01Model.FK_Expense_ExpenseLine">
-            <End Role="ExpenseLine" EntitySet="ExpenseLines" />
+            <End Role="ExpenseCategory" EntitySet="ExpenseCategories" />
             <End Role="Expense" EntitySet="Expenses" />
           </AssociationSet>
           <AssociationSet Name="FK_OrderList_Resource" Association="MES01Model.FK_OrderList_Resource">
@@ -426,18 +426,18 @@
             <PropertyRef Name="ExpenseId" />
           </Key>
           <Property Name="ExpenseId" Type="Int32" Nullable="false" />
-          <Property Name="ExpenseLineId" Type="Int32" Nullable="false" />
+          <Property Name="ExpenseCategoryId" Type="Int32" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Cost" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ExpenseLine" Relationship="MES01Model.FK_Expense_ExpenseLine" FromRole="Expense" ToRole="ExpenseLine" />
+          <NavigationProperty Name="ExpenseCategory" Relationship="MES01Model.FK_Expense_ExpenseLine" FromRole="Expense" ToRole="ExpenseCategory" />
         </EntityType>
-        <EntityType Name="ExpenseLine">
+        <EntityType Name="ExpenseCategory">
           <Key>
-            <PropertyRef Name="ExpenseLineId" />
+            <PropertyRef Name="ExpenseCategoryId" />
           </Key>
-          <Property Name="ExpenseLineId" Type="Int32" Nullable="false" />
+          <Property Name="ExpenseCategoryId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Expenses" Relationship="MES01Model.FK_Expense_ExpenseLine" FromRole="ExpenseLine" ToRole="Expense" />
+          <NavigationProperty Name="Expenses" Relationship="MES01Model.FK_Expense_ExpenseLine" FromRole="ExpenseCategory" ToRole="Expense" />
         </EntityType>
         <EntityType Name="GrowthRate">
           <Key>
@@ -614,14 +614,14 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Expense_ExpenseLine">
-          <End Type="MES01Model.ExpenseLine" Role="ExpenseLine" Multiplicity="1" />
+          <End Type="MES01Model.ExpenseCategory" Role="ExpenseCategory" Multiplicity="1" />
           <End Type="MES01Model.Expense" Role="Expense" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ExpenseLine">
-              <PropertyRef Name="ExpenseLineId" />
+            <Principal Role="ExpenseCategory">
+              <PropertyRef Name="ExpenseCategoryId" />
             </Principal>
             <Dependent Role="Expense">
-              <PropertyRef Name="ExpenseLineId" />
+              <PropertyRef Name="ExpenseCategoryId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -723,16 +723,16 @@
               <MappingFragment StoreEntitySet="Expense">
                 <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="ExpenseLineId" ColumnName="ExpenseLineId" />
+                <ScalarProperty Name="ExpenseCategoryId" ColumnName="ExpenseCategoryId" />
                 <ScalarProperty Name="ExpenseId" ColumnName="ExpenseId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ExpenseLines">
-            <EntityTypeMapping TypeName="MES01Model.ExpenseLine">
-              <MappingFragment StoreEntitySet="ExpenseLine">
+          <EntitySetMapping Name="ExpenseCategories">
+            <EntityTypeMapping TypeName="MES01Model.ExpenseCategory">
+              <MappingFragment StoreEntitySet="ExpenseCategory">
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ExpenseLineId" ColumnName="ExpenseLineId" />
+                <ScalarProperty Name="ExpenseCategoryId" ColumnName="ExpenseCategoryId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -26,7 +26,7 @@ namespace MiniSteelworksMES.Data.Dao
                             select new
                             {
                                 Expense = x,
-                                CategoryName = x.ExpenseLine.Name
+                                CategoryName = x.ExpenseCategory.Name
                             };
 
                 var list = query.ToList();
