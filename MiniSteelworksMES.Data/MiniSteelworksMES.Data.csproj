@@ -56,10 +56,17 @@
   <ItemGroup>
     <Compile Include="Dao\Dao.cs" />
     <Compile Include="Dao\EmployeeDao.cs" />
+    <Compile Include="Dao\ExpenseDao.cs" />
+    <Compile Include="Dao\ExpenseLineDao.cs" />
+    <Compile Include="Dao\GrowthRateDao.cs" />
+    <Compile Include="Dao\ProductDao.cs" />
     <Compile Include="Dao\OrderDao.cs" />
+    <Compile Include="Dao\ProductDetailDao.cs" />
     <Compile Include="Dao\ProductWareHouseDao.cs" />
     <Compile Include="Dao\ResourceDao.cs" />
     <Compile Include="Dao\Resource_QuoteDao.cs" />
+    <Compile Include="Dao\SaleDao.cs" />
+    <Compile Include="Dao\TeamDao.cs" />
     <Compile Include="Dao\TransactionDao.cs" />
     <Compile Include="Dao\ResourceWareHouseDao.cs" />
     <Compile Include="EFLibrary\BaseDao.cs" />
@@ -72,10 +79,17 @@
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\Expense.cs" />
+    <Compile Include="Entities\ExpenseLine.cs" />
+    <Compile Include="Entities\GowthRate.cs" />
     <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\ProductDetail.cs" />
     <Compile Include="Entities\ProductWareHouse.cs" />
     <Compile Include="Entities\Resourc.cs" />
     <Compile Include="Entities\Resource_Quote.cs" />
+    <Compile Include="Entities\Sale.cs" />
+    <Compile Include="Entities\Team.cs" />
     <Compile Include="Entities\Transaction.cs" />
     <Compile Include="Entities\ResourceWareHouse.cs" />
     <Compile Include="Expense.cs">

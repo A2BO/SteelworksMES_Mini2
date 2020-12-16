@@ -16,6 +16,7 @@ namespace MiniSteelworksMES.Data.Dao
         {
             return x => x.date == key;
         }
+
         public List<Resource_Quote> GetAll()
         {
             using (var context = new MesEntities())
@@ -26,6 +27,7 @@ namespace MiniSteelworksMES.Data.Dao
                 return query.ToList();
             }
         }
+
         public List<Resource_Quote> GetByDate(DateTime start, DateTime end)
         {
             using (var context = new MesEntities())

@@ -238,6 +238,7 @@
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Dao.OrderDao.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Dao.WareHouseDao.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Order.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.Product.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.ProductWareHouse.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Resource1.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Resource_Quote1.datasource" />
