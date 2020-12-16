@@ -46,5 +46,16 @@ namespace MiniSteelworksMES.Data.Dao
                 return query.ToList();
             }
         }
+
+        public List<Resource> GetAll()
+        {
+            using (var context = new MesEntities())
+            {
+                var query = from x in context.Resources
+                            select x;
+
+                return query.ToList();
+            }
+        }
     }
 }
