@@ -12,19 +12,16 @@ namespace MiniSteelworksMES.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Transaction
+    public partial class Sale
     {
-        public int ResourceId { get; set; }
-        public string SellerName { get; set; }
+        public int SaleId { get; set; }
+        public int ProductDetailId { get; set; }
+        public string Buyer { get; set; }
         public System.DateTime Date { get; set; }
-        public string Origin { get; set; }
+        public int Amount { get; set; }
         public int EmployeeId { get; set; }
-        public int Type { get; set; }
-        public int ResourceWareHouseId { get; set; }
+        public int ProductWareHouseId { get; set; }
     
-        public virtual Resource Resource { get; set; }
-        public virtual Resource Resource1 { get; set; }
-        public virtual Employee Employee { get; set; }
-        public virtual ResourceWareHouse ResourceWareHouse { get; set; }
+        public virtual ProductDetail ProductDetail { get; set; }
     }
 }

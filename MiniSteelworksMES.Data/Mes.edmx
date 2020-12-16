@@ -15,8 +15,36 @@
           <Property Name="BossId" Type="int" />
           <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Team" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="10" />
+          <Property Name="TeamId" Type="int" />
+          <Property Name="Team" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Expense">
+          <Key>
+            <PropertyRef Name="ExpenseId" />
+          </Key>
+          <Property Name="ExpenseId" Type="int" Nullable="false" />
+          <Property Name="ExpenseLineId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExpenseLine">
+          <Key>
+            <PropertyRef Name="ExpenseLineId" />
+          </Key>
+          <Property Name="ExpenseLineId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GrowthRate">
+          <Key>
+            <PropertyRef Name="GrowthRateId" />
+          </Key>
+          <Property Name="GrowthRateId" Type="int" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstQuarter" Type="int" Nullable="false" />
+          <Property Name="SecondQuarter" Type="int" Nullable="false" />
+          <Property Name="ThirdQuarter" Type="int" Nullable="false" />
+          <Property Name="FourthQuarter" Type="int" Nullable="false" />
+          <Property Name="LastYear" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -28,6 +56,33 @@
           <Property Name="EmployeeId" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="SellerName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductWareHouseId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductDetail">
+          <Key>
+            <PropertyRef Name="ProductDetailId" />
+          </Key>
+          <Property Name="ProductDetailId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="Buyer" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductWareHouse">
+          <Key>
+            <PropertyRef Name="ProductWareHouseId" />
+          </Key>
+          <Property Name="ProductWareHouseId" Type="int" Nullable="false" />
+          <Property Name="AreaSize" Type="int" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Resource">
           <Key>
@@ -49,6 +104,34 @@
           <Property Name="Iron Ore Quote" Type="float" Nullable="false" />
           <Property Name="Copper Quote" Type="float" Nullable="false" />
         </EntityType>
+        <EntityType Name="ResourceWareHouse">
+          <Key>
+            <PropertyRef Name="ResourceWareHouseId" />
+          </Key>
+          <Property Name="ResourceWareHouseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AreaSize" Type="int" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="SaleId" />
+          </Key>
+          <Property Name="SaleId" Type="int" Nullable="false" />
+          <Property Name="ProductDetailId" Type="int" Nullable="false" />
+          <Property Name="Buyer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="ProductWareHouseId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="TeamId" />
+          </Key>
+          <Property Name="TeamId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Transaction">
           <Key>
             <PropertyRef Name="ResourceId" />
@@ -61,16 +144,7 @@
           <Property Name="Origin" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="EmployeeId" Type="int" Nullable="false" />
           <Property Name="Type" Type="int" Nullable="false" />
-          <Property Name="WareHouseId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="WareHouse">
-          <Key>
-            <PropertyRef Name="WareHouseId" />
-          </Key>
-          <Property Name="WareHouseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AreaSize" Type="int" Nullable="false" />
-          <Property Name="EmployeeId" Type="int" Nullable="false" />
-          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ResourceWareHouseId" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Employee_Employee">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
@@ -81,6 +155,30 @@
             </Principal>
             <Dependent Role="Employee1">
               <PropertyRef Name="BossId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Team">
+          <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="TeamId" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="TeamId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Expense_ExpenseLine">
+          <End Role="ExpenseLine" Type="Self.ExpenseLine" Multiplicity="1" />
+          <End Role="Expense" Type="Self.Expense" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExpenseLine">
+              <PropertyRef Name="ExpenseLineId" />
+            </Principal>
+            <Dependent Role="Expense">
+              <PropertyRef Name="ExpenseLineId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -105,6 +203,42 @@
             </Principal>
             <Dependent Role="Order">
               <PropertyRef Name="ResourceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ProductWareHouse">
+          <End Role="ProductWareHouse" Type="Self.ProductWareHouse" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductWareHouse">
+              <PropertyRef Name="ProductWareHouseId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductWareHouseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductDetail_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductDetail" Type="Self.ProductDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductDetail">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sale_ProductDetail">
+          <End Role="ProductDetail" Type="Self.ProductDetail" Multiplicity="1" />
+          <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductDetail">
+              <PropertyRef Name="ProductDetailId" />
+            </Principal>
+            <Dependent Role="Sale">
+              <PropertyRef Name="ProductDetailId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -133,27 +267,43 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Transaction_WareHouse1">
-          <End Role="WareHouse" Type="Self.WareHouse" Multiplicity="1" />
+          <End Role="ResourceWareHouse" Type="Self.ResourceWareHouse" Multiplicity="1" />
           <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="WareHouse">
-              <PropertyRef Name="WareHouseId" />
+            <Principal Role="ResourceWareHouse">
+              <PropertyRef Name="ResourceWareHouseId" />
             </Principal>
             <Dependent Role="Transaction">
-              <PropertyRef Name="WareHouseId" />
+              <PropertyRef Name="ResourceWareHouseId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="MES01ModelStoreContainer">
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Expense" EntityType="Self.Expense" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExpenseLine" EntityType="Self.ExpenseLine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GrowthRate" EntityType="Self.GrowthRate" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductDetail" EntityType="Self.ProductDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductWareHouse" EntityType="Self.ProductWareHouse" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Resource" EntityType="Self.Resource" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Resource Quote" EntityType="Self.Resource Quote" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResourceWareHouse" EntityType="Self.ResourceWareHouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sale" EntityType="Self.Sale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transaction" EntityType="Self.Transaction" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="WareHouse" EntityType="Self.WareHouse" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Employee_Employee" Association="Self.FK_Employee_Employee">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Employee1" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Team" Association="Self.FK_Employee_Team">
+            <End Role="Team" EntitySet="Team" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Expense_ExpenseLine" Association="Self.FK_Expense_ExpenseLine">
+            <End Role="ExpenseLine" EntitySet="ExpenseLine" />
+            <End Role="Expense" EntitySet="Expense" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Employee" Association="Self.FK_Order_Employee">
             <End Role="Employee" EntitySet="Employee" />
@@ -162,6 +312,18 @@
           <AssociationSet Name="FK_OrderList_Resource" Association="Self.FK_OrderList_Resource">
             <End Role="Resource" EntitySet="Resource" />
             <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductWareHouse" Association="Self.FK_Product_ProductWareHouse">
+            <End Role="ProductWareHouse" EntitySet="ProductWareHouse" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductDetail_Product" Association="Self.FK_ProductDetail_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductDetail" EntitySet="ProductDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sale_ProductDetail" Association="Self.FK_Sale_ProductDetail">
+            <End Role="ProductDetail" EntitySet="ProductDetail" />
+            <End Role="Sale" EntitySet="Sale" />
           </AssociationSet>
           <AssociationSet Name="FK_Transaction_Employee" Association="Self.FK_Transaction_Employee">
             <End Role="Employee" EntitySet="Employee" />
@@ -172,7 +334,7 @@
             <End Role="Transaction" EntitySet="Transaction" />
           </AssociationSet>
           <AssociationSet Name="FK_Transaction_WareHouse1" Association="Self.FK_Transaction_WareHouse1">
-            <End Role="WareHouse" EntitySet="WareHouse" />
+            <End Role="ResourceWareHouse" EntitySet="ResourceWareHouse" />
             <End Role="Transaction" EntitySet="Transaction" />
           </AssociationSet>
         </EntityContainer>
@@ -218,21 +380,11 @@
           <Property Name="Origin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="EmployeeId" Type="Int32" Nullable="false" />
           <Property Name="Type" Type="Int32" Nullable="false" />
-          <Property Name="WareHouseId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Resource" Relationship="Self.FK_IncomingOutgoingCarbon_Resource" FromRole="Transaction" ToRole="Resource" />
           <NavigationProperty Name="Resource1" Relationship="Self.FK_Transaction_Resource" FromRole="Transaction" ToRole="Resource" />
-          <NavigationProperty Name="WareHouse" Relationship="Self.FK_Transaction_WareHouse1" FromRole="Transaction" ToRole="WareHouse" />
           <NavigationProperty Name="Employee" Relationship="MES01Model.FK_Transaction_Employee" FromRole="Transaction" ToRole="Employee" />
-        </EntityType>
-        <EntityType Name="WareHouse">
-          <Key>
-            <PropertyRef Name="WareHouseId" />
-          </Key>
-          <Property Name="WareHouseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AreaSize" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Transactions" Relationship="Self.FK_Transaction_WareHouse1" FromRole="WareHouse" ToRole="Transaction" />
+          <Property Name="ResourceWareHouseId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ResourceWareHouse" Relationship="MES01Model.FK_Transaction_WareHouse11" FromRole="Transaction" ToRole="ResourceWareHouse" />
         </EntityType>
         <Association Name="FK_OrderList_Resource">
           <End Role="Resource" Type="Self.Resource" Multiplicity="1" />
@@ -270,23 +422,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Transaction_WareHouse1">
-          <End Role="WareHouse" Type="Self.WareHouse" Multiplicity="1" />
-          <End Role="Transaction" Type="Self.Transaction" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="WareHouse">
-              <PropertyRef Name="WareHouseId" />
-            </Principal>
-            <Dependent Role="Transaction">
-              <PropertyRef Name="WareHouseId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="MesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Orders" EntityType="Self.Order" />
           <EntitySet Name="Resources" EntityType="Self.Resource" />
           <EntitySet Name="Transactions" EntityType="Self.Transaction" />
-          <EntitySet Name="WareHouses" EntityType="Self.WareHouse" />
           <AssociationSet Name="FK_OrderList_Resource" Association="Self.FK_OrderList_Resource">
             <End Role="Resource" EntitySet="Resources" />
             <End Role="Order" EntitySet="Orders" />
@@ -297,10 +436,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_Transaction_Resource" Association="Self.FK_Transaction_Resource">
             <End Role="Resource" EntitySet="Resources" />
-            <End Role="Transaction" EntitySet="Transactions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Transaction_WareHouse1" Association="Self.FK_Transaction_WareHouse1">
-            <End Role="WareHouse" EntitySet="WareHouses" />
             <End Role="Transaction" EntitySet="Transactions" />
           </AssociationSet>
           <EntitySet Name="Employees" EntityType="MES01Model.Employee" />
@@ -317,6 +452,39 @@
             <End Role="Transaction" EntitySet="Transactions" />
           </AssociationSet>
           <EntitySet Name="Resource_Quotes" EntityType="MES01Model.Resource_Quote" />
+          <EntitySet Name="Expenses" EntityType="MES01Model.Expense" />
+          <EntitySet Name="ExpenseLines" EntityType="MES01Model.ExpenseLine" />
+          <EntitySet Name="GrowthRates" EntityType="MES01Model.GrowthRate" />
+          <EntitySet Name="Products" EntityType="MES01Model.Product" />
+          <EntitySet Name="ProductDetails" EntityType="MES01Model.ProductDetail" />
+          <EntitySet Name="ProductWareHouses" EntityType="MES01Model.ProductWareHouse" />
+          <EntitySet Name="ResourceWareHouses" EntityType="MES01Model.ResourceWareHouse" />
+          <EntitySet Name="Sales" EntityType="MES01Model.Sale" />
+          <EntitySet Name="Teams" EntityType="MES01Model.Team" />
+          <AssociationSet Name="FK_Employee_Team" Association="MES01Model.FK_Employee_Team">
+            <End Role="Team" EntitySet="Teams" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Expense_ExpenseLine" Association="MES01Model.FK_Expense_ExpenseLine">
+            <End Role="ExpenseLine" EntitySet="ExpenseLines" />
+            <End Role="Expense" EntitySet="Expenses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductWareHouse" Association="MES01Model.FK_Product_ProductWareHouse">
+            <End Role="ProductWareHouse" EntitySet="ProductWareHouses" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductDetail_Product" Association="MES01Model.FK_ProductDetail_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductDetail" EntitySet="ProductDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sale_ProductDetail" Association="MES01Model.FK_Sale_ProductDetail">
+            <End Role="ProductDetail" EntitySet="ProductDetails" />
+            <End Role="Sale" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaction_WareHouse11" Association="MES01Model.FK_Transaction_WareHouse11">
+            <End EntitySet="ResourceWareHouses" Role="ResourceWareHouse" />
+            <End EntitySet="Transactions" Role="Transaction" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Employee">
           <Key>
@@ -328,12 +496,14 @@
           <Property Name="BossId" Type="Int32" />
           <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Team" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Team" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employee1" Relationship="MES01Model.FK_Employee_Employee" FromRole="Employee" ToRole="Employee1" />
           <NavigationProperty Name="Employee2" Relationship="MES01Model.FK_Employee_Employee" FromRole="Employee1" ToRole="Employee" />
           <NavigationProperty Name="Orders" Relationship="MES01Model.FK_Order_Employee" FromRole="Employee" ToRole="Order" />
           <NavigationProperty Name="Transactions" Relationship="MES01Model.FK_Transaction_Employee" FromRole="Employee" ToRole="Transaction" />
+          <Property Name="TeamId" Type="Int32" />
+          <NavigationProperty Name="Team1" Relationship="MES01Model.FK_Employee_Team" FromRole="Employee" ToRole="Team" />
         </EntityType>
         <Association Name="FK_Employee_Employee">
           <End Type="MES01Model.Employee" Role="Employee" Multiplicity="0..1" />
@@ -381,6 +551,170 @@
           <Property Name="Iron_Ore_Quote" Type="Double" Nullable="false" />
           <Property Name="Copper_Quote" Type="Double" Nullable="false" />
         </EntityType>
+        <EntityType Name="Expense">
+          <Key>
+            <PropertyRef Name="ExpenseId" />
+          </Key>
+          <Property Name="ExpenseId" Type="Int32" Nullable="false" />
+          <Property Name="ExpenseLineId" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ExpenseLine" Relationship="MES01Model.FK_Expense_ExpenseLine" FromRole="Expense" ToRole="ExpenseLine" />
+        </EntityType>
+        <EntityType Name="ExpenseLine">
+          <Key>
+            <PropertyRef Name="ExpenseLineId" />
+          </Key>
+          <Property Name="ExpenseLineId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Expenses" Relationship="MES01Model.FK_Expense_ExpenseLine" FromRole="ExpenseLine" ToRole="Expense" />
+        </EntityType>
+        <EntityType Name="GrowthRate">
+          <Key>
+            <PropertyRef Name="GrowthRateId" />
+          </Key>
+          <Property Name="GrowthRateId" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstQuarter" Type="Int32" Nullable="false" />
+          <Property Name="SecondQuarter" Type="Int32" Nullable="false" />
+          <Property Name="ThirdQuarter" Type="Int32" Nullable="false" />
+          <Property Name="FourthQuarter" Type="Int32" Nullable="false" />
+          <Property Name="LastYear" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductWareHouseId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ProductWareHouse" Relationship="MES01Model.FK_Product_ProductWareHouse" FromRole="Product" ToRole="ProductWareHouse" />
+          <NavigationProperty Name="ProductDetails" Relationship="MES01Model.FK_ProductDetail_Product" FromRole="Product" ToRole="ProductDetail" />
+        </EntityType>
+        <EntityType Name="ProductDetail">
+          <Key>
+            <PropertyRef Name="ProductDetailId" />
+          </Key>
+          <Property Name="ProductDetailId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Buyer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Product" Relationship="MES01Model.FK_ProductDetail_Product" FromRole="ProductDetail" ToRole="Product" />
+          <NavigationProperty Name="Sales" Relationship="MES01Model.FK_Sale_ProductDetail" FromRole="ProductDetail" ToRole="Sale" />
+        </EntityType>
+        <EntityType Name="ProductWareHouse">
+          <Key>
+            <PropertyRef Name="ProductWareHouseId" />
+          </Key>
+          <Property Name="ProductWareHouseId" Type="Int32" Nullable="false" />
+          <Property Name="AreaSize" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Products" Relationship="MES01Model.FK_Product_ProductWareHouse" FromRole="ProductWareHouse" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ResourceWareHouse">
+          <Key>
+            <PropertyRef Name="ResourceWareHouseId" />
+          </Key>
+          <Property Name="ResourceWareHouseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaSize" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Transactions" Relationship="MES01Model.FK_Transaction_WareHouse11" FromRole="ResourceWareHouse" ToRole="Transaction" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="SaleId" />
+          </Key>
+          <Property Name="SaleId" Type="Int32" Nullable="false" />
+          <Property Name="ProductDetailId" Type="Int32" Nullable="false" />
+          <Property Name="Buyer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="ProductWareHouseId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ProductDetail" Relationship="MES01Model.FK_Sale_ProductDetail" FromRole="Sale" ToRole="ProductDetail" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="TeamId" />
+          </Key>
+          <Property Name="TeamId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employees" Relationship="MES01Model.FK_Employee_Team" FromRole="Team" ToRole="Employee" />
+        </EntityType>
+        <Association Name="FK_Employee_Team">
+          <End Type="MES01Model.Team" Role="Team" Multiplicity="0..1" />
+          <End Type="MES01Model.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="TeamId" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="TeamId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Expense_ExpenseLine">
+          <End Type="MES01Model.ExpenseLine" Role="ExpenseLine" Multiplicity="1" />
+          <End Type="MES01Model.Expense" Role="Expense" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExpenseLine">
+              <PropertyRef Name="ExpenseLineId" />
+            </Principal>
+            <Dependent Role="Expense">
+              <PropertyRef Name="ExpenseLineId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ProductWareHouse">
+          <End Type="MES01Model.ProductWareHouse" Role="ProductWareHouse" Multiplicity="1" />
+          <End Type="MES01Model.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductWareHouse">
+              <PropertyRef Name="ProductWareHouseId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductWareHouseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductDetail_Product">
+          <End Type="MES01Model.Product" Role="Product" Multiplicity="1" />
+          <End Type="MES01Model.ProductDetail" Role="ProductDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductDetail">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sale_ProductDetail">
+          <End Type="MES01Model.ProductDetail" Role="ProductDetail" Multiplicity="1" />
+          <End Type="MES01Model.Sale" Role="Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductDetail">
+              <PropertyRef Name="ProductDetailId" />
+            </Principal>
+            <Dependent Role="Sale">
+              <PropertyRef Name="ProductDetailId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaction_WareHouse11">
+          <End Type="MES01Model.ResourceWareHouse" Multiplicity="1" Role="ResourceWareHouse" />
+          <End Type="MES01Model.Transaction" Multiplicity="*" Role="Transaction" />
+          <ReferentialConstraint>
+            <Principal Role="ResourceWareHouse">
+              <PropertyRef Name="ResourceWareHouseId" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="ResourceWareHouseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -413,29 +747,20 @@
           <EntitySetMapping Name="Transactions">
             <EntityTypeMapping TypeName="MES01Model.Transaction">
               <MappingFragment StoreEntitySet="Transaction">
+                <ScalarProperty Name="ResourceWareHouseId" ColumnName="ResourceWareHouseId" />
                 <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
                 <ScalarProperty Name="SellerName" ColumnName="SellerName" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Origin" ColumnName="Origin" />
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="WareHouseId" ColumnName="WareHouseId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="WareHouses">
-            <EntityTypeMapping TypeName="MES01Model.WareHouse">
-              <MappingFragment StoreEntitySet="WareHouse">
-                <ScalarProperty Name="WareHouseId" ColumnName="WareHouseId" />
-                <ScalarProperty Name="AreaSize" ColumnName="AreaSize" />
-                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="MES01Model.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Team" ColumnName="Team" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
@@ -455,6 +780,97 @@
                 <ScalarProperty Name="Aluminum_Quote" ColumnName="Aluminum Quote" />
                 <ScalarProperty Name="Nikel_Quote" ColumnName="Nikel Quote" />
                 <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Expenses">
+            <EntityTypeMapping TypeName="MES01Model.Expense">
+              <MappingFragment StoreEntitySet="Expense">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ExpenseLineId" ColumnName="ExpenseLineId" />
+                <ScalarProperty Name="ExpenseId" ColumnName="ExpenseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExpenseLines">
+            <EntityTypeMapping TypeName="MES01Model.ExpenseLine">
+              <MappingFragment StoreEntitySet="ExpenseLine">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ExpenseLineId" ColumnName="ExpenseLineId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GrowthRates">
+            <EntityTypeMapping TypeName="MES01Model.GrowthRate">
+              <MappingFragment StoreEntitySet="GrowthRate">
+                <ScalarProperty Name="LastYear" ColumnName="LastYear" />
+                <ScalarProperty Name="FourthQuarter" ColumnName="FourthQuarter" />
+                <ScalarProperty Name="ThirdQuarter" ColumnName="ThirdQuarter" />
+                <ScalarProperty Name="SecondQuarter" ColumnName="SecondQuarter" />
+                <ScalarProperty Name="FirstQuarter" ColumnName="FirstQuarter" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="GrowthRateId" ColumnName="GrowthRateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="MES01Model.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductWareHouseId" ColumnName="ProductWareHouseId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductDetails">
+            <EntityTypeMapping TypeName="MES01Model.ProductDetail">
+              <MappingFragment StoreEntitySet="ProductDetail">
+                <ScalarProperty Name="Buyer" ColumnName="Buyer" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductDetailId" ColumnName="ProductDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductWareHouses">
+            <EntityTypeMapping TypeName="MES01Model.ProductWareHouse">
+              <MappingFragment StoreEntitySet="ProductWareHouse">
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="AreaSize" ColumnName="AreaSize" />
+                <ScalarProperty Name="ProductWareHouseId" ColumnName="ProductWareHouseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResourceWareHouses">
+            <EntityTypeMapping TypeName="MES01Model.ResourceWareHouse">
+              <MappingFragment StoreEntitySet="ResourceWareHouse">
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="AreaSize" ColumnName="AreaSize" />
+                <ScalarProperty Name="ResourceWareHouseId" ColumnName="ResourceWareHouseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sales">
+            <EntityTypeMapping TypeName="MES01Model.Sale">
+              <MappingFragment StoreEntitySet="Sale">
+                <ScalarProperty Name="ProductWareHouseId" ColumnName="ProductWareHouseId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Buyer" ColumnName="Buyer" />
+                <ScalarProperty Name="ProductDetailId" ColumnName="ProductDetailId" />
+                <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="MES01Model.Team">
+              <MappingFragment StoreEntitySet="Team">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

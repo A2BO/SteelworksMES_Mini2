@@ -12,19 +12,20 @@ namespace MiniSteelworksMES.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Transaction
+    public partial class ProductWareHouse
     {
-        public int ResourceId { get; set; }
-        public string SellerName { get; set; }
-        public System.DateTime Date { get; set; }
-        public string Origin { get; set; }
-        public int EmployeeId { get; set; }
-        public int Type { get; set; }
-        public int ResourceWareHouseId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ProductWareHouse()
+        {
+            this.Products = new HashSet<Product>();
+        }
     
-        public virtual Resource Resource { get; set; }
-        public virtual Resource Resource1 { get; set; }
-        public virtual Employee Employee { get; set; }
-        public virtual ResourceWareHouse ResourceWareHouse { get; set; }
+        public int ProductWareHouseId { get; set; }
+        public int AreaSize { get; set; }
+        public int EmployeeId { get; set; }
+        public string PhoneNumber { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

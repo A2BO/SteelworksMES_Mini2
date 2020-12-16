@@ -94,7 +94,7 @@ namespace MiniSteelworksMES.Data
                     result.Origin = list[3];
                     result.EmployeeId = Convert.ToInt32(list[4]);
                     result.Type = (list[5] == "출고") ? 0 : 1;
-                    result.WareHouseId = Convert.ToInt32(list[6]);
+                    result.ResourceWareHouseId = Convert.ToInt32(list[6]);
                 }
 
                 context.SaveChanges();

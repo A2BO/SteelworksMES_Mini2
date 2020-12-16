@@ -77,7 +77,7 @@ namespace MesUI
             // 
             // wareHouseBindingSource
             // 
-            this.wareHouseBindingSource.DataSource = typeof(MiniSteelworksMES.Data.WareHouse);
+            this.wareHouseBindingSource.DataSource = typeof(MiniSteelworksMES.Data.ResourceWareHouse);
             // 
             // AddWarehousebtn
             // 

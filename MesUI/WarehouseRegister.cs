@@ -44,7 +44,7 @@ namespace MesUI
                     strArray[i] = ((TextBox)textboxList[i]).Text;
             }
 
-            Dao.WaereHouse.InsertWareHouse(strArray);
+            Dao.ResourceWareHouse.InsertWareHouse(strArray);
 
             ((WarehouseManagement)this.parentForm).DisplayAllItem();
 

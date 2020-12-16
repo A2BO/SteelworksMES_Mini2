@@ -60,7 +60,7 @@
     <Compile Include="Dao\ResourceDao.cs" />
     <Compile Include="Dao\Resource_QuoteDao.cs" />
     <Compile Include="Dao\TransactionDao.cs" />
-    <Compile Include="Dao\WareHouseDap.cs" />
+    <Compile Include="Dao\ResourceWareHouseDao.cs" />
     <Compile Include="EFLibrary\BaseDao.cs" />
     <Compile Include="EFLibrary\DbContextCreator.cs" />
     <Compile Include="EFLibrary\DualKeyDao.cs" />
@@ -75,7 +75,16 @@
     <Compile Include="Entities\Resourc.cs" />
     <Compile Include="Entities\Resource_Quote.cs" />
     <Compile Include="Entities\Transaction.cs" />
-    <Compile Include="Entities\WareHouse.cs" />
+    <Compile Include="Entities\ResourceWareHouse.cs" />
+    <Compile Include="Expense.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseLine.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GrowthRate.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
     <Compile Include="Mes.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -94,17 +103,32 @@
     <Compile Include="Order.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDetail.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductWareHouse.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceWareHouse.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
     <Compile Include="Resource_Quote.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
-    <Compile Include="Transaction.cs">
+    <Compile Include="Sale.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
-    <Compile Include="WareHouse.cs">
+    <Compile Include="Team.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
   </ItemGroup>

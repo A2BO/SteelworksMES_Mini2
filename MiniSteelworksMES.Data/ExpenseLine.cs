@@ -12,19 +12,18 @@ namespace MiniSteelworksMES.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Transaction
+    public partial class ExpenseLine
     {
-        public int ResourceId { get; set; }
-        public string SellerName { get; set; }
-        public System.DateTime Date { get; set; }
-        public string Origin { get; set; }
-        public int EmployeeId { get; set; }
-        public int Type { get; set; }
-        public int ResourceWareHouseId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ExpenseLine()
+        {
+            this.Expenses = new HashSet<Expense>();
+        }
     
-        public virtual Resource Resource { get; set; }
-        public virtual Resource Resource1 { get; set; }
-        public virtual Employee Employee { get; set; }
-        public virtual ResourceWareHouse ResourceWareHouse { get; set; }
+        public int ExpenseLineId { get; set; }
+        public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Expense> Expenses { get; set; }
     }
 }

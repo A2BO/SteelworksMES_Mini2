@@ -12,15 +12,15 @@ namespace MiniSteelworksMES.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class WareHouse
+    public partial class ResourceWareHouse
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public WareHouse()
+        public ResourceWareHouse()
         {
             this.Transactions = new HashSet<Transaction>();
         }
     
-        public int WareHouseId { get; set; }
+        public int ResourceWareHouseId { get; set; }
         public int AreaSize { get; set; }
         public int EmployeeId { get; set; }
         public string PhoneNumber { get; set; }

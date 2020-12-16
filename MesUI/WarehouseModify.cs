@@ -50,7 +50,7 @@ namespace MesUI
             {
                 list.Add(((TextBox)textboxList[i]).Text);
             }
-            Dao.WaereHouse.UpdateWareHouse(list);
+            Dao.ResourceWareHouse.UpdateWareHouse(list);
 
             ((WarehouseManagement)this.parentForm).DisplayAllItem();
 

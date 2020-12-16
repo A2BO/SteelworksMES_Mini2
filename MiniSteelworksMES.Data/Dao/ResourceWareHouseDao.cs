@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace MiniSteelworksMES.Data.Dao
 {
-    public class WareHouseDao : SingleKeyDao<WareHouse, int>
+    public class ResourceWareHouseDao : SingleKeyDao<ResourceWareHouse, int>
     {
-        protected override Expression<Func<WareHouse, int>> KeySelector => throw new NotImplementedException();
+        protected override Expression<Func<ResourceWareHouse, int>> KeySelector => throw new NotImplementedException();
 
-        protected override Expression<Func<WareHouse, bool>> IsKey(int key)
+        protected override Expression<Func<ResourceWareHouse, bool>> IsKey(int key)
         {
-            return x => x.WareHouseId == key;
+            return x => x.ResourceWareHouseId == key;
         }
 
-        public List<WareHouse> GetAll()
+        public List<ResourceWareHouse> GetAll()
         {
             using (var context = new MesEntities())
             {
-                var query = from x in context.WareHouses
+                var query = from x in context.ResourceWareHouses
                             select x;
 
                 return query.ToList();
@@ -37,11 +37,11 @@ namespace MiniSteelworksMES.Data.Dao
 
             using (var context = new MesEntities())
             {
-                var result = context.WareHouses.SingleOrDefault(x => x.WareHouseId == id);
+                var result = context.ResourceWareHouses.SingleOrDefault(x => x.ResourceWareHouseId == id);
 
                 if (result != null)
                 {
-                    result.WareHouseId = id;
+                    result.ResourceWareHouseId = id;
                     result.AreaSize = Convert.ToInt32(list[1]);
                     result.EmployeeId = Convert.ToInt32(list[2]);
                     result.PhoneNumber = list[3];
@@ -57,10 +57,10 @@ namespace MiniSteelworksMES.Data.Dao
         {
             using (var context = new MesEntities())
             {
-                var WareHouses = context.Set<WareHouse>();
-                WareHouses.Add(new WareHouse
+                var WareHouses = context.Set<ResourceWareHouse>();
+                WareHouses.Add(new ResourceWareHouse
                 {
-                    WareHouseId = Convert.ToInt32(strArray[0]),
+                    ResourceWareHouseId = Convert.ToInt32(strArray[0]),
                     AreaSize = Convert.ToInt32(strArray[1]),
                     EmployeeId = Convert.ToInt32(strArray[2]),
                     PhoneNumber = strArray[3],
@@ -75,8 +75,8 @@ namespace MiniSteelworksMES.Data.Dao
         {
             using (var context = new MesEntities())
             {
-                WareHouse wareHouse = context.WareHouses.Find(Convert.ToInt32(strWareHouseId));
-                context.WareHouses.Remove(wareHouse);
+                ResourceWareHouse wareHouse = context.ResourceWareHouses.Find(Convert.ToInt32(strWareHouseId));
+                context.ResourceWareHouses.Remove(wareHouse);
                 context.SaveChanges();
             }
 

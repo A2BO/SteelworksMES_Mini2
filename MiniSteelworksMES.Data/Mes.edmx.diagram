@@ -8,16 +8,29 @@
         <EntityTypeShape EntityType="MES01Model.Order" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MES01Model.Resource" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MES01Model.Transaction" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MES01Model.WareHouse" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="MES01Model.FK_OrderList_Resource" ManuallyRouted="false" />
         <AssociationConnector Association="MES01Model.FK_IncomingOutgoingCarbon_Resource" ManuallyRouted="false" />
         <AssociationConnector Association="MES01Model.FK_Transaction_Resource" ManuallyRouted="false" />
-        <AssociationConnector Association="MES01Model.FK_Transaction_WareHouse1" ManuallyRouted="false" />
         <EntityTypeShape EntityType="MES01Model.Employee" Width="1.5" PointX="0.75" PointY="4.375" />
         <AssociationConnector Association="MES01Model.FK_Employee_Employee" />
         <AssociationConnector Association="MES01Model.FK_Order_Employee" />
         <AssociationConnector Association="MES01Model.FK_Transaction_Employee" />
         <EntityTypeShape EntityType="MES01Model.Resource_Quote" Width="2.125" PointX="6.75" PointY="1.125" />
+        <EntityTypeShape EntityType="MES01Model.Expense" Width="1.5" PointX="11.625" PointY="0.875" />
+        <EntityTypeShape EntityType="MES01Model.ExpenseLine" Width="1.5" PointX="9.375" PointY="1" />
+        <EntityTypeShape EntityType="MES01Model.GrowthRate" Width="1.5" PointX="3.375" PointY="9.75" />
+        <EntityTypeShape EntityType="MES01Model.Product" Width="1.5" PointX="10.625" PointY="5.25" />
+        <EntityTypeShape EntityType="MES01Model.ProductDetail" Width="1.5" PointX="12.875" PointY="5" />
+        <EntityTypeShape EntityType="MES01Model.ProductWareHouse" Width="1.5" PointX="8.375" PointY="5.25" />
+        <EntityTypeShape EntityType="MES01Model.ResourceWareHouse" Width="1.5" PointX="8.375" PointY="8.875" />
+        <EntityTypeShape EntityType="MES01Model.Sale" Width="1.5" PointX="15.125" PointY="5" />
+        <EntityTypeShape EntityType="MES01Model.Team" Width="1.5" PointX="0.75" PointY="9.375" />
+        <AssociationConnector Association="MES01Model.FK_Employee_Team" />
+        <AssociationConnector Association="MES01Model.FK_Expense_ExpenseLine" />
+        <AssociationConnector Association="MES01Model.FK_Product_ProductWareHouse" />
+        <AssociationConnector Association="MES01Model.FK_ProductDetail_Product" />
+        <AssociationConnector Association="MES01Model.FK_Sale_ProductDetail" />
+        <AssociationConnector Association="MES01Model.FK_Transaction_WareHouse11" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
