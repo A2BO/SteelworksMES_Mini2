@@ -57,6 +57,7 @@
     <Compile Include="Dao\Dao.cs" />
     <Compile Include="Dao\EmployeeDao.cs" />
     <Compile Include="Dao\OrderDao.cs" />
+    <Compile Include="Dao\ProductWareHouseDao.cs" />
     <Compile Include="Dao\ResourceDao.cs" />
     <Compile Include="Dao\Resource_QuoteDao.cs" />
     <Compile Include="Dao\TransactionDao.cs" />
@@ -72,6 +73,7 @@
     </Compile>
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\ProductWareHouse.cs" />
     <Compile Include="Entities\Resourc.cs" />
     <Compile Include="Entities\Resource_Quote.cs" />
     <Compile Include="Entities\Transaction.cs" />
