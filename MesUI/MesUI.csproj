@@ -119,10 +119,10 @@
     <Compile Include="Mini2\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mini2\MaterialOrderManagement.cs">
+    <Compile Include="Mini1\MaterialOrderManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mini2\MaterialOrderManagement.Designer.cs">
+    <Compile Include="Mini1\MaterialOrderManagement.Designer.cs">
       <DependentUpon>MaterialOrderManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="MesRegEx.cs" />
@@ -243,7 +243,7 @@
     <EmbeddedResource Include="Mini2\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mini2\MaterialOrderManagement.resx">
+    <EmbeddedResource Include="Mini1\MaterialOrderManagement.resx">
       <DependentUpon>MaterialOrderManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mini1\OrderAdd.resx">
