@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Diagram.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -40,7 +41,11 @@
     <Reference Include="DevExpress.Pdf.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.2.UI, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.2.UI, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.2.Wizard, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraDiagram.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v20.2, Version=20.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -121,6 +126,12 @@
     <Compile Include="ResourceQuoteForm.Designer.cs">
       <DependentUpon>ResourceQuoteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResourceQuote_Dev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceQuote_Dev.Designer.cs">
+      <DependentUpon>ResourceQuote_Dev.cs</DependentUpon>
+    </Compile>
     <Compile Include="StaffManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +208,9 @@
     <EmbeddedResource Include="ResourceQuoteForm.resx">
       <DependentUpon>ResourceQuoteForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQuote_Dev.resx">
+      <DependentUpon>ResourceQuote_Dev.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StaffManagement.resx">
       <DependentUpon>StaffManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,7 +238,10 @@
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Dao.OrderDao.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Dao.WareHouseDao.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Order.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.ProductWareHouse.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Resource1.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.Resource_Quote1.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.Team.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Transaction.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.WareHouse.datasource" />
     <None Include="Properties\DataSources\ResourceQuoteForm.datasource" />

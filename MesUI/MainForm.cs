@@ -96,7 +96,7 @@ namespace MesUI
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowChildForm(new ResourceQuoteForm());
+            ShowChildForm(new ResourceQuote_Dev());
         }
 
         private void RibbonControl_SelectedIndexChanged(object sender, EventArgs e)
