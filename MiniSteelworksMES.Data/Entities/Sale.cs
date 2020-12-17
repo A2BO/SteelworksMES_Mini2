@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniSteelworksMES.Data.Entities
+namespace MiniSteelworksMES.Data
 {
-    class Sale
+    public partial class Sale
     {
+        public string ProductCategory { get; set; }
     }
+
 }

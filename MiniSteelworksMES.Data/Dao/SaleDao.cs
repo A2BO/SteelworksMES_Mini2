@@ -1,4 +1,5 @@
 ﻿using MiniSteelworksMES.Data.Dao;
+using MiniSteelworksMES.Data;
 using EFLibrary;
 using System;
 using System.Collections.Generic;
@@ -28,5 +29,26 @@ namespace MiniSteelworksMES.Data.Dao
                 return query.ToList();
             }
         }
+
+        //public List<Sale> Search()
+        //{
+        //    using (MesEntities context = new MesEntities())
+        //    {
+        //        Dictionary<int, string> ProductCeategories = context.Products.ToDictionary(
+        //            x => x.ProductId,
+        //            x => x.Name);
+
+        //        var query = from x in context.Sales
+        //                    select x;
+
+        //        var list = query.ToList();
+        //        foreach (var x in list)
+        //        {
+        //            x.ProductCategory = ProductCeategories[x.ProductId];
+        //        }
+
+        //        return list;
+        //    }
+        //}
     }
 }

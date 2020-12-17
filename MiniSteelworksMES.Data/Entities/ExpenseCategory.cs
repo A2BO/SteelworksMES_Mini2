@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniSteelworksMES.Data.Entities
+namespace MiniSteelworksMES.Data
 {
-    class ExpenseCategory
+    public partial class ExpenseCategory
     {
     }
 }

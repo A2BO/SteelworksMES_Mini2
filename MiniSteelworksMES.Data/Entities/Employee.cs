@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniSteelworksMES.Data.Entities
+namespace MiniSteelworksMES.Data
 {
-    class Employee
+    public partial class Employee
     {
     }
 }
