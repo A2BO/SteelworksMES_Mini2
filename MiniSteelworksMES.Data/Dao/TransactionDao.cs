@@ -128,5 +128,47 @@ namespace MiniSteelworksMES.Data
                 return query.ToList();
             }
         }
+
+        //public List<Transaction> Search()
+        //{
+        //    using (MesEntities context = new MesEntities())
+        //    {
+        //        var query = from x in context.Transactions
+        //                    select new
+        //                    {
+        //                        Transaction = x,
+        //                        ResourceCategory = x.Resource.ResourceId
+        //                    };
+
+        //        var list = query.ToList();
+        //        foreach (var item in list)
+        //        {
+        //            item.Transaction.ResourceCategory = item.ResourceCategory;
+        //        }
+        //        return list.Select(x => x.Transaction).ToList();
+        //    }
+        //}
+
+        public List<Transaction> Search()
+        {
+            using (MesEntities context = new MesEntities())
+            {
+                Dictionary<int, string> ResourCeategories = context.Resources.ToDictionary(
+                    x => x.ResourceId,
+                    x => x.Name);
+
+                var query = from x in context.Transactions
+                            select x;
+
+                var list = query.ToList();
+                foreach (var x in list)
+                {
+                    x.ResourceCategory = ResourCeategories[x.ResourceId];
+                }
+
+                return list;
+            }
+        }
+
     }
 }

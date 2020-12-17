@@ -25,7 +25,7 @@
           </Key>
           <Property Name="ExpenseId" Type="int" Nullable="false" />
           <Property Name="ExpenseCategoryId" Type="int" Nullable="false" />
-          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Date" Type="date" />
           <Property Name="Cost" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ExpenseCategory">
@@ -44,7 +44,7 @@
           <Property Name="FirstQuarter" Type="int" Nullable="false" />
           <Property Name="SecondQuarter" Type="int" Nullable="false" />
           <Property Name="ThirdQuarter" Type="int" Nullable="false" />
-          <Property Name="FourthQuarter" Type="int" Nullable="false" />
+          <Property Name="ForthQuarter" Type="int" Nullable="false" />
           <Property Name="LastYear" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
@@ -93,6 +93,7 @@
           <Property Name="Category" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="SellerName" Type="nvarchar" MaxLength="100" />
+          <Property Name="UnitPrice" Type="int" />
         </EntityType>
         <EntityType Name="Resource Quote">
           <Key>
@@ -122,8 +123,8 @@
           <Property Name="Buyer" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="Amount" Type="int" Nullable="false" />
-          <Property Name="EmployeeId" Type="int" Nullable="false" />
           <Property Name="ProductWareHouseId" Type="int" Nullable="false" />
+          <Property Name="TeamId" Type="int" />
         </EntityType>
         <EntityType Name="Team">
           <Key>
@@ -131,6 +132,7 @@
           </Key>
           <Property Name="TeamId" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Target" Type="int" />
         </EntityType>
         <EntityType Name="Transaction">
           <Key>
@@ -145,6 +147,8 @@
           <Property Name="EmployeeId" Type="int" Nullable="false" />
           <Property Name="Type" Type="int" Nullable="false" />
           <Property Name="ResourceWareHouseId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="int" />
         </EntityType>
         <Association Name="FK_Employee_Employee">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
@@ -427,7 +431,7 @@
           </Key>
           <Property Name="ExpenseId" Type="Int32" Nullable="false" />
           <Property Name="ExpenseCategoryId" Type="Int32" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
           <Property Name="Cost" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ExpenseCategory" Relationship="MES01Model.FK_Expense_ExpenseLine" FromRole="Expense" ToRole="ExpenseCategory" />
         </EntityType>
@@ -448,7 +452,7 @@
           <Property Name="FirstQuarter" Type="Int32" Nullable="false" />
           <Property Name="SecondQuarter" Type="Int32" Nullable="false" />
           <Property Name="ThirdQuarter" Type="Int32" Nullable="false" />
-          <Property Name="FourthQuarter" Type="Int32" Nullable="false" />
+          <Property Name="ForthQuarter" Type="Int32" Nullable="false" />
           <Property Name="LastYear" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
@@ -504,6 +508,7 @@
           <Property Name="Category" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="SellerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UnitPrice" Type="Int32" />
           <NavigationProperty Name="Orders" Relationship="MES01Model.FK_OrderList_Resource" FromRole="Resource" ToRole="Order" />
           <NavigationProperty Name="Transactions" Relationship="MES01Model.FK_Transaction_Resource" FromRole="Resource" ToRole="Transaction" />
         </EntityType>
@@ -536,8 +541,8 @@
           <Property Name="Buyer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Amount" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
           <Property Name="ProductWareHouseId" Type="Int32" Nullable="false" />
+          <Property Name="TeamId" Type="Int32" />
           <NavigationProperty Name="ProductDetail" Relationship="MES01Model.FK_Sale_ProductDetail" FromRole="Sale" ToRole="ProductDetail" />
         </EntityType>
         <EntityType Name="Team">
@@ -546,6 +551,7 @@
           </Key>
           <Property Name="TeamId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Target" Type="Int32" />
           <NavigationProperty Name="Employees" Relationship="MES01Model.FK_Employee_Team" FromRole="Team" ToRole="Employee" />
         </EntityType>
         <EntityType Name="Transaction">
@@ -561,6 +567,8 @@
           <Property Name="EmployeeId" Type="Int32" Nullable="false" />
           <Property Name="Type" Type="Int32" Nullable="false" />
           <Property Name="ResourceWareHouseId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Int32" />
           <NavigationProperty Name="Employee" Relationship="MES01Model.FK_Transaction_Employee" FromRole="Transaction" ToRole="Employee" />
           <NavigationProperty Name="Resource" Relationship="MES01Model.FK_Transaction_Resource" FromRole="Transaction" ToRole="Resource" />
           <NavigationProperty Name="ResourceWareHouse" Relationship="MES01Model.FK_Transaction_WareHouse1" FromRole="Transaction" ToRole="ResourceWareHouse" />
@@ -740,7 +748,7 @@
             <EntityTypeMapping TypeName="MES01Model.GrowthRate">
               <MappingFragment StoreEntitySet="GrowthRate">
                 <ScalarProperty Name="LastYear" ColumnName="LastYear" />
-                <ScalarProperty Name="FourthQuarter" ColumnName="FourthQuarter" />
+                <ScalarProperty Name="ForthQuarter" ColumnName="ForthQuarter" />
                 <ScalarProperty Name="ThirdQuarter" ColumnName="ThirdQuarter" />
                 <ScalarProperty Name="SecondQuarter" ColumnName="SecondQuarter" />
                 <ScalarProperty Name="FirstQuarter" ColumnName="FirstQuarter" />
@@ -793,6 +801,7 @@
           <EntitySetMapping Name="Resources">
             <EntityTypeMapping TypeName="MES01Model.Resource">
               <MappingFragment StoreEntitySet="Resource">
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
                 <ScalarProperty Name="SellerName" ColumnName="SellerName" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="Category" ColumnName="Category" />
@@ -825,8 +834,8 @@
           <EntitySetMapping Name="Sales">
             <EntityTypeMapping TypeName="MES01Model.Sale">
               <MappingFragment StoreEntitySet="Sale">
+                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
                 <ScalarProperty Name="ProductWareHouseId" ColumnName="ProductWareHouseId" />
-                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Buyer" ColumnName="Buyer" />
@@ -838,6 +847,7 @@
           <EntitySetMapping Name="Teams">
             <EntityTypeMapping TypeName="MES01Model.Team">
               <MappingFragment StoreEntitySet="Team">
+                <ScalarProperty Name="Target" ColumnName="Target" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="TeamId" ColumnName="TeamId" />
               </MappingFragment>
@@ -846,6 +856,8 @@
           <EntitySetMapping Name="Transactions">
             <EntityTypeMapping TypeName="MES01Model.Transaction">
               <MappingFragment StoreEntitySet="Transaction">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="ResourceWareHouseId" ColumnName="ResourceWareHouseId" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />

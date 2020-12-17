@@ -19,7 +19,7 @@ namespace MiniSteelworksMES.Data
         public int FirstQuarter { get; set; }
         public int SecondQuarter { get; set; }
         public int ThirdQuarter { get; set; }
-        public int FourthQuarter { get; set; }
+        public int ForthQuarter { get; set; }
         public int LastYear { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace MesUI
         {
             base.OnLoad(e);
 
-            bdsExpense.DataSource = Dao.expense.Search();
+            bdsExpense.DataSource = Dao.Expense.Search();
         }
     }
 }

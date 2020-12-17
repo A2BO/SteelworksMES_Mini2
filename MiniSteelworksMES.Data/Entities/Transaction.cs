@@ -15,5 +15,8 @@ namespace MiniSteelworksMES.Data
                 return Type == 1 ? "입고" : "출고";
             }
         }
+
+        public string ResourceCategory { get; set; }
+
     }
 }

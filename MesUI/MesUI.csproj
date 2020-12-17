@@ -252,6 +252,9 @@
     <EmbeddedResource Include="Mini2\GrossProfit.resx">
       <DependentUpon>GrossProfit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mini2\GrowthRate.resx">
+      <DependentUpon>GrowthRate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mini2\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mini1\OrderModify.resx">
       <DependentUpon>OrderModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mini2\ProductSalesQuantity.resx">
+      <DependentUpon>ProductSalesQuantity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mini2\ResourcePurchaceQuantity.resx">
       <DependentUpon>ResourcePurchaceQuantity.cs</DependentUpon>
@@ -311,11 +317,13 @@
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Dao.OrderDao.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Dao.WareHouseDao.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Expense.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.GrowthRate.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Order.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Product.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.ProductWareHouse.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Resource1.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Resource_Quote1.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.Sale.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Team.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Transaction.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.WareHouse.datasource" />

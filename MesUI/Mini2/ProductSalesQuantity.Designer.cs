@@ -30,11 +30,42 @@ namespace MesUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            this.saleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // chartControl1
+            // 
+            this.chartControl1.DataSource = this.saleBindingSource;
+            this.chartControl1.Location = new System.Drawing.Point(12, 12);
+            this.chartControl1.Name = "chartControl1";
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chartControl1.Size = new System.Drawing.Size(776, 426);
+            this.chartControl1.TabIndex = 0;
+            // 
+            // saleBindingSource
+            // 
+            this.saleBindingSource.DataSource = typeof(MiniSteelworksMES.Data.Sale);
+            // 
+            // ProductSalesQuantity
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chartControl1);
+            this.Name = "ProductSalesQuantity";
             this.Text = "ProductSalesQuantity";
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private DevExpress.XtraCharts.ChartControl chartControl1;
+        private System.Windows.Forms.BindingSource saleBindingSource;
     }
 }

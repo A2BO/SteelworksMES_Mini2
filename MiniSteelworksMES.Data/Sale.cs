@@ -19,8 +19,8 @@ namespace MiniSteelworksMES.Data
         public string Buyer { get; set; }
         public System.DateTime Date { get; set; }
         public int Amount { get; set; }
-        public int EmployeeId { get; set; }
         public int ProductWareHouseId { get; set; }
+        public Nullable<int> TeamId { get; set; }
     
         public virtual ProductDetail ProductDetail { get; set; }
     }

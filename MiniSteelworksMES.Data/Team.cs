@@ -22,6 +22,7 @@ namespace MiniSteelworksMES.Data
     
         public int TeamId { get; set; }
         public string Name { get; set; }
+        public Nullable<int> Target { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee> Employees { get; set; }

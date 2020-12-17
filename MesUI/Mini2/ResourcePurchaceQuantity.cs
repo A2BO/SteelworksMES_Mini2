@@ -23,11 +23,7 @@ namespace MesUI
         {
             base.OnLoad(e);
 
-            if (DesignMode)
-                return;
-
-            List<Resource> list = Dao.Resource.GetAll();
-            resourceBindingSource.DataSource = list;
+            transactionBindingSource.DataSource = Dao.Transaction.Search();
         }
     }
 }
