@@ -119,6 +119,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Mes.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\TransactionModel.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
@@ -181,7 +182,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
