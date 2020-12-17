@@ -97,7 +97,7 @@ namespace MesUI
             this.ClientSize = new System.Drawing.Size(1109, 744);
             this.Controls.Add(this.chartControl1);
             this.Name = "GrowthRate";
-            this.Text = "GrowthRate";
+            this.Text = "자사, 경쟁사 성장률 비교";
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
