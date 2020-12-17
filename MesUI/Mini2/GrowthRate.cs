@@ -26,7 +26,7 @@ namespace MesUI
             //    return;
 
             //List<GrowthRate> list = Dao.growthRate.GetAll();
-            growthRateBindingSource.DataSource = Dao.growthRate.GetAll() ;
+            growthRateBindingSource.DataSource = Dao.GrowthRate.GetAll() ;
         }
     }
 }
