@@ -252,6 +252,9 @@
     <EmbeddedResource Include="Mini2\GrossProfit.resx">
       <DependentUpon>GrossProfit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mini2\GrowthRate.resx">
+      <DependentUpon>GrowthRate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mini2\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +314,7 @@
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Dao.OrderDao.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Dao.WareHouseDao.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Expense.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.GrowthRate.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Order.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Product.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.ProductWareHouse.datasource" />

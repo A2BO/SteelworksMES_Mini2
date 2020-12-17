@@ -14,7 +14,6 @@ namespace MiniSteelworksMES.Data.Dao
         public static ResourceDao Resource { get; } = new ResourceDao();
         public static ResourceWareHouseDao ResourceWareHouse { get; } = new ResourceWareHouseDao();
         public static OrderDao Order { get; } = new OrderDao();
-        
         public static SaleDao sale { get; } = new SaleDao();
         public static ExpenseDao expense { get; } = new ExpenseDao();
         public static ExpenseCategoryDao expenseLine { get; } = new ExpenseCategoryDao();

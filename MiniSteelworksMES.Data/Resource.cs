@@ -26,6 +26,7 @@ namespace MiniSteelworksMES.Data
         public int Category { get; set; }
         public int Quantity { get; set; }
         public string SellerName { get; set; }
+        public Nullable<int> UnitPrice { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }

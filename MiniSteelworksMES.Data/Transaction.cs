@@ -21,6 +21,8 @@ namespace MiniSteelworksMES.Data
         public int EmployeeId { get; set; }
         public int Type { get; set; }
         public int ResourceWareHouseId { get; set; }
+        public Nullable<int> Quantity { get; set; }
+        public Nullable<int> Price { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual Resource Resource { get; set; }
