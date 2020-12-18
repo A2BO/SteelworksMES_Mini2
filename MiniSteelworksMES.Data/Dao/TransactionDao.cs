@@ -1,6 +1,7 @@
 ﻿using EFLibrary;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -152,6 +153,35 @@ namespace MiniSteelworksMES.Data
             }
             
         }
-       
+        public List<TransactionModel> GetModels()
+        {
+            using (MesEntities context = (MesEntities)DbContextCreator.Create())
+            {
+                var query = (from x in context.Transactions
+                            //let albumCount = x.Albums.Count()
+                            select x).GroupBy( x => x.ResourceId).Select(
+                    group => new
+                    {
+                        group.FirstOrDefault().ResourceId,
+                        Quantity = group.Sum(
+                        x => x.Quantity)
+                    } );
+
+                List<TransactionModel> list = new List<TransactionModel>();
+
+                foreach (var item in query)
+                {
+                    if( item != null )
+                        list.Add(new TransactionModel(item.ResourceId, item.Quantity));
+                }
+
+                foreach (var item in list)
+                {
+                    Debug.WriteLine(item.ResourceId + " " + item.Quantity);
+                }
+                
+                return list;
+            }
+        }
     }
 }
