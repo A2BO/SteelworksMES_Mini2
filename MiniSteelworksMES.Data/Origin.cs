@@ -12,25 +12,20 @@ namespace MiniSteelworksMES.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Resource
+    public partial class Origin
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Resource()
+        public Origin()
         {
-            this.Orders = new HashSet<Order>();
             this.OriginQuantities = new HashSet<OriginQuantity>();
             this.Transactions = new HashSet<Transaction>();
         }
     
-        public int ResourceId { get; set; }
+        public int OriginId { get; set; }
         public string Name { get; set; }
-        public int Category { get; set; }
-        public int Quantity { get; set; }
-        public string SellerName { get; set; }
-        public Nullable<int> UnitPrice { get; set; }
+        public double Longgitude_Member { get; set; }
+        public double Latitude_Member { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OriginQuantity> OriginQuantities { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
