@@ -142,6 +142,8 @@
           </Key>
           <Property Name="ResourceId" Type="int" Nullable="false" />
           <Property Name="SellerName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Longgitude Member" Type="float" />
+          <Property Name="Latitude Member" Type="float" />
           <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="Origin" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="EmployeeId" Type="int" Nullable="false" />
@@ -561,6 +563,8 @@
           </Key>
           <Property Name="ResourceId" Type="Int32" Nullable="false" />
           <Property Name="SellerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Longgitude_Member" Type="Double" />
+          <Property Name="Latitude_Member" Type="Double" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Origin" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EmployeeId" Type="Int32" Nullable="false" />
@@ -860,6 +864,8 @@
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
                 <ScalarProperty Name="Origin" ColumnName="Origin" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Latitude_Member" ColumnName="Latitude Member" />
+                <ScalarProperty Name="Longgitude_Member" ColumnName="Longgitude Member" />
                 <ScalarProperty Name="SellerName" ColumnName="SellerName" />
                 <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
               </MappingFragment>

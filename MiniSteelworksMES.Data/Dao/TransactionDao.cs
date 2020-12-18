@@ -153,25 +153,58 @@ namespace MiniSteelworksMES.Data
             }
             
         }
+        //public List<OriginModel> OriginGetModels()
+        //{
+        //    using (MesEntities context = (MesEntities)DbContextCreator.Create())
+        //    {
+        //        var query1 = from x in context.Transactions
+        //                    let OriginCount = x.Origin.Count()
+        //                    orderby OriginCount descending
+        //                     select new OriginModel
+        //                    {
+        //                        Origin = x.Origin,
+        //                        OriginCount = OriginCount
+        //                    };
+
+        //        var query = (from x in context.Transactions
+        //                     select x).GroupBy(x => x.Origin).Select(
+        //            group => new
+        //            {
+        //                group.FirstOrDefault().Origin,
+        //                Quantity = group.Sum(
+        //                    x => x.Quantity)
+        //            });
+                
+        //        List<OriginModel> list = new List<OriginModel>();
+
+        //        foreach (var item in query)
+        //        {
+        //            if (item != null)
+        //                list.Add(new OriginModel(item.Origin, item.Quantity));
+        //        }
+
+        //        return list;
+        //    }
+        //}
+
         public List<TransactionModel> GetModels()
         {
             using (MesEntities context = (MesEntities)DbContextCreator.Create())
             {
                 var query = (from x in context.Transactions
-                            //let albumCount = x.Albums.Count()
-                            select x).GroupBy( x => x.ResourceId).Select(
+                             select x).GroupBy(x => x.ResourceId).Select(
                     group => new
                     {
                         group.FirstOrDefault().ResourceId,
                         Quantity = group.Sum(
                         x => x.Quantity)
-                    } );
+                    });
 
                 List<TransactionModel> list = new List<TransactionModel>();
 
                 foreach (var item in query)
                 {
-                    if( item != null )
+                    if (item != null)
                         list.Add(new TransactionModel(item.ResourceId, item.Quantity));
                 }
 
@@ -179,7 +212,7 @@ namespace MiniSteelworksMES.Data
                 {
                     Debug.WriteLine(item.ResourceId + " " + item.Quantity);
                 }
-                
+
                 return list;
             }
         }

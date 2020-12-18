@@ -8,10 +8,10 @@ namespace MiniSteelworksMES.Data
 {
     public class TransactionModel
     {
-        public TransactionModel(int id, int? quantity)
+        public TransactionModel(int id, int quantity)
         {
             ResourceId = id;
-            Quantity = (int)quantity;
+            Quantity = quantity;
         }
 
         public int ResourceId { get; set; }

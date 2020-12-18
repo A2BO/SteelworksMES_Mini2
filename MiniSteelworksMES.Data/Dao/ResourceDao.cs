@@ -58,21 +58,21 @@ namespace MiniSteelworksMES.Data
             }
         }
 
-        public List<ResourceModel> GetModels()
-        {
-            using (MesEntities context = (MesEntities)DbContextCreator.Create())
-            {
-                var query = from x in context.Resources
-                            let resourceCount = x.Transactions.Count()
-                            orderby resourceCount descending
-                            select new ResourceModel
-                            {
-                                SellerName = x.SellerName,
-                                ResourceCount = resourceCount
-                            };
+        //public List<ResourceModel> GetModels()
+        //{
+        //    using (MesEntities context = (MesEntities)DbContextCreator.Create())
+        //    {
+        //        var query = from x in context.Resources
+        //                    let resourceCount = x.Transactions.Count()
+        //                    orderby resourceCount descending
+        //                    select new ResourceModel
+        //                    {
+        //                        SellerName = x.SellerName,
+        //                        ResourceCount = resourceCount
+        //                    };
 
-                return query.Take(10).ToList();
-            }
-        }
+        //        return query.Take(10).ToList();
+        //    }
+        //}
     }
 }

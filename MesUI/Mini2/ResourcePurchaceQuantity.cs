@@ -26,11 +26,10 @@ namespace MesUI
             if (DesignMode)
                 return;
 
-            var resources = Dao.Resource.GetModels();
-            resourceModelBindingSource.DataSource = resources;
+            var transactions = Dao.Transaction.GetModels();
+            transactionModelBindingSource.DataSource = transactions;
 
 
-            //transactionBindingSource.DataSource = Dao.Transaction.Search();
         }
     }
 }

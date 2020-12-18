@@ -16,6 +16,8 @@ namespace MiniSteelworksMES.Data
     {
         public int ResourceId { get; set; }
         public string SellerName { get; set; }
+        public Nullable<double> Longgitude_Member { get; set; }
+        public Nullable<double> Latitude_Member { get; set; }
         public System.DateTime Date { get; set; }
         public string Origin { get; set; }
         public int EmployeeId { get; set; }
