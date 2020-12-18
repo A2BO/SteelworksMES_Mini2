@@ -23,5 +23,6 @@ namespace MiniSteelworksMES.Data
         public Nullable<int> TeamId { get; set; }
     
         public virtual ProductDetail ProductDetail { get; set; }
+        public virtual Team Team { get; set; }
     }
 }

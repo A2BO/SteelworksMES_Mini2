@@ -31,5 +31,10 @@ namespace MesUI
 
 
         }
+
+        private void chartControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
