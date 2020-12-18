@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MiniSteelworksMES.Data;
+using MiniSteelworksMES.Data.Dao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +12,26 @@ using System.Windows.Forms;
 
 namespace MesUI
 {
-    public partial class SalesPerformence : Form
+    public partial class SalesPerformence : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public SalesPerformence()
         {
             InitializeComponent();
+        }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            //if (DesignMode)
+            //    return;
+
+            //List<SalesPerformence> list = Dao.salesPerformence.GetAll();
+            teamBindingSource.DataSource = Dao.Team.GetAll();
+        }
+
+        private void chartControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
