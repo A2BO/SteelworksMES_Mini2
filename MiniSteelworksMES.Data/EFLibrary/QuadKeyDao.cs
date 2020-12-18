@@ -11,7 +11,7 @@ namespace EFLibrary
     {
         public T GetByPK(K1 key1, K2 key2, K3 key3, K4 key4)
         {
-            using (var context = DbContextCreator.Context())
+            using (var context = DbContextCreator.Create())
             {
                 var query = context
                     .Set<T>()

@@ -322,6 +322,7 @@
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Product.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.ProductWareHouse.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Resource1.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.ResourceModel.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Resource_Quote1.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Sale.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Team.datasource" />

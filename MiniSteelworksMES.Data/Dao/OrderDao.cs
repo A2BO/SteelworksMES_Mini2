@@ -20,7 +20,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public List<Order> GetAll()
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Orders
                             select x;
@@ -38,7 +38,7 @@ namespace MiniSteelworksMES.Data.Dao
 
             int id = Convert.ToInt32(orderId);
 
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Orders
                             where x.OrderId == id
@@ -55,7 +55,7 @@ namespace MiniSteelworksMES.Data.Dao
             if (sellerName == "")
                 return null;
 
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Orders
                             where x.SellerName == sellerName
@@ -70,7 +70,7 @@ namespace MiniSteelworksMES.Data.Dao
             int id = Convert.ToInt32(list[0]);
             int rscId = Convert.ToInt32(list[1]);
 
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var result = context.Orders.SingleOrDefault(x => x.OrderId == id);
 
@@ -93,7 +93,7 @@ namespace MiniSteelworksMES.Data.Dao
         public void InsertOrder(string[] strArray)
         {
             // insert
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var orders = context.Set<Order>();
                 orders.Add(new Order
@@ -112,7 +112,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public void Delete(string strOrderId)
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 Order order = context.Orders.Find(Convert.ToInt32(strOrderId));
                 context.Orders.Remove(order);

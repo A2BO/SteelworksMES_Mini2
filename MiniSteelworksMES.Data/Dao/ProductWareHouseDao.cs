@@ -20,7 +20,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public List<ProductWareHouse> GetAll()
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.ProductWareHouses
                             select x;
@@ -35,7 +35,7 @@ namespace MiniSteelworksMES.Data.Dao
         {
             int id = Convert.ToInt32(list[0]);
 
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var result = context.ProductWareHouses.SingleOrDefault(x => x.ProductWareHouseId == id);
 
@@ -55,7 +55,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public void InsertWareHouse(string[] strArray)
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var WareHouses = context.Set<ProductWareHouse>();
                 WareHouses.Add(new ProductWareHouse
@@ -73,7 +73,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public void Delete(string strWareHouseId)
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 ProductWareHouse wareHouse = context.ProductWareHouses.Find(Convert.ToInt32(strWareHouseId));
                 context.ProductWareHouses.Remove(wareHouse);

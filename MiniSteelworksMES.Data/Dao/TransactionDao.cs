@@ -19,7 +19,7 @@ namespace MiniSteelworksMES.Data
 
         public List<Transaction> GetAll()
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Transactions
                             select x;
@@ -30,7 +30,7 @@ namespace MiniSteelworksMES.Data
 
         public List<Transaction> GetAllByPagingQuery(int showPage)
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 int totalCount = (from x in context.Transactions
                              select x).Count();
@@ -49,7 +49,7 @@ namespace MiniSteelworksMES.Data
 
         public int GetPageCount(int skipCount)
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 int totalCount = (from x in context.Transactions
                                   select x).Count();
@@ -65,7 +65,7 @@ namespace MiniSteelworksMES.Data
 
         public List<Transaction> GetByDate(DateTime start, DateTime end)
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Transactions
                             where x.Date >= start && x.Date <= end
@@ -81,7 +81,7 @@ namespace MiniSteelworksMES.Data
             DateTime datetime = Convert.ToDateTime(list[2]);
             int type = (list[5] == "출고") ? 0 : 1;
 
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var result = context.Transactions.SingleOrDefault(x => x.ResourceId == id
                    && x.Date == datetime
@@ -104,7 +104,7 @@ namespace MiniSteelworksMES.Data
 
         public List<Transaction> GetByResourceId(int rscId)
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Transactions
                             where x.ResourceId == rscId
@@ -118,7 +118,7 @@ namespace MiniSteelworksMES.Data
 
         public List<Transaction> GetByResourceIdAndDate(int rscId, DateTime start, DateTime end)
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Transactions
                             where x.Date >= start && x.Date <= end && x.ResourceId == rscId
@@ -132,7 +132,7 @@ namespace MiniSteelworksMES.Data
 
         public List<Transaction> Search()
         {
-            using (MesEntities context = new MesEntities())
+            using (MesEntities context = DbContextCreator.Create())
             {
                 Dictionary<int, string> ResourCeategories = context.Resources.ToDictionary(
                     x => x.ResourceId,

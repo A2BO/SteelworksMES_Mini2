@@ -11,7 +11,7 @@ namespace EFLibrary
     {
         public int GetCount()
         {
-            using (var context = DbContextCreator.Context())
+            using (var context = DbContextCreator.Create())
             {
                 return context.Set<T>().Count();
             }
@@ -19,7 +19,7 @@ namespace EFLibrary
 
         public List<T> GetAll()
         {
-            using (var context = DbContextCreator.Context())
+            using (var context = DbContextCreator.Create())
             {
                 return context.Set<T>().ToList();
             }
@@ -27,7 +27,7 @@ namespace EFLibrary
 
         public void Insert(T entity)
         {
-            using (var context = DbContextCreator.Context())
+            using (var context = DbContextCreator.Create())
             {
                 context.Set<T>().Add(entity);
 
@@ -37,7 +37,7 @@ namespace EFLibrary
 
         public void Update(T entity)
         {
-            using (var context = DbContextCreator.Context())
+            using (var context = DbContextCreator.Create())
             {
                 context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
 
@@ -47,7 +47,7 @@ namespace EFLibrary
 
         public void Delete(T entity)
         {
-            using (var context = DbContextCreator.Context())
+            using (var context = DbContextCreator.Create())
             {
                 context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
 

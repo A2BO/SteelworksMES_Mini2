@@ -19,7 +19,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public bool VerifyIdPassword(string id, string passwd)
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Employees
                             where x.EmployeeId.ToString() == id && x.Password == passwd
@@ -35,7 +35,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public string GetName(string id)
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Employees
                             where x.EmployeeId.ToString() == id
@@ -51,7 +51,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public List<Employee> GetAll()
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Employees
                             select x;
@@ -62,7 +62,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public List<string> GetTeamNames()
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = (from x in context.Employees
                             select x.Team).Distinct();
@@ -73,7 +73,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public List<Employee> GetEmployeeByTeam(string teamName)
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Employees
                             where x.Team == teamName
@@ -85,7 +85,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public List<Employee> GetByPK(int employeeId)
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Employees
                             where x.EmployeeId == employeeId
@@ -99,7 +99,7 @@ namespace MiniSteelworksMES.Data.Dao
         {
             int id = Convert.ToInt32(list[0]);
 
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var result = context.Employees.SingleOrDefault(x => x.EmployeeId == id);
 
@@ -122,7 +122,7 @@ namespace MiniSteelworksMES.Data.Dao
         public void InsertEmployee(List<string> list)
         {
             // insert
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var orders = context.Set<Employee>();
                 orders.Add(new Employee

@@ -11,7 +11,7 @@ namespace EFLibrary
     {
         public T GetByPK(K key)
         {
-            using (var context = DbContextCreator.Context())
+            using (var context = DbContextCreator.Create())
             {
                 return context.Set<T>()
                     .Where(IsKey(key))
@@ -31,7 +31,7 @@ namespace EFLibrary
 
         public K GetMaxKey()
         {
-            using (var context = DbContextCreator.Context())
+            using (var context = DbContextCreator.Create())
             {
                 var query = context.Set<T>()
                     .OrderByDescending(KeySelector)

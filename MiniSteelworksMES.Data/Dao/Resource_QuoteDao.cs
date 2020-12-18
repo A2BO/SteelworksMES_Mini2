@@ -19,7 +19,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public List<Resource_Quote> GetAll()
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Resource_Quotes
                             select x;
@@ -30,7 +30,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public List<Resource_Quote> GetByDate(DateTime start, DateTime end)
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Resource_Quotes
                             where x.date >= start && x.date <= end

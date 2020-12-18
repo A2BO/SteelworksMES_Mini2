@@ -20,7 +20,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public List<Team> GetAll()
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Teams
                             select x;

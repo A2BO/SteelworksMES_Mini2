@@ -20,7 +20,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public List<Expense> Search()
         {
-            using (MesEntities context = new MesEntities())
+            using (MesEntities context = DbContextCreator.Create())
             {
                 var query = from x in context.Expenses
                             select new
@@ -82,7 +82,7 @@ namespace MiniSteelworksMES.Data.Dao
 
         public List<Expense> GetAll()
         {
-            using (var context = new MesEntities())
+            using (var context = DbContextCreator.Create())
             {
                 var query = from x in context.Expenses
                             select x;

@@ -31,13 +31,15 @@ namespace MesUI
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
-            this.transactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.resourceModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resourceModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // chartControl1
@@ -45,24 +47,24 @@ namespace MesUI
             this.chartControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.chartControl1.DataSource = this.transactionBindingSource;
+            this.chartControl1.DataSource = this.resourceModelBindingSource;
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Location = new System.Drawing.Point(12, 12);
             this.chartControl1.Name = "chartControl1";
-            this.chartControl1.SeriesDataMember = "ResourceCategory";
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl1.SeriesTemplate.ArgumentDataMember = "Date";
-            this.chartControl1.SeriesTemplate.SeriesDataMember = "ResourceCategory";
-            this.chartControl1.SeriesTemplate.ValueDataMembersSerializable = "Quantity";
+            series1.ArgumentDataMember = "SellerName";
+            series1.Name = "Series 1";
+            series1.ValueDataMembersSerializable = "ResourceCount";
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
             this.chartControl1.SeriesTemplate.View = lineSeriesView1;
             this.chartControl1.Size = new System.Drawing.Size(1121, 618);
             this.chartControl1.TabIndex = 0;
             // 
-            // transactionBindingSource
+            // resourceModelBindingSource
             // 
-            this.transactionBindingSource.DataSource = typeof(MiniSteelworksMES.Data.Transaction);
+            this.resourceModelBindingSource.DataSource = typeof(MiniSteelworksMES.Data.ResourceModel);
             // 
             // ResourcePurchaceQuantity
             // 
@@ -73,9 +75,10 @@ namespace MesUI
             this.Name = "ResourcePurchaceQuantity";
             this.Text = "광물별 구매량";
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resourceModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -83,6 +86,6 @@ namespace MesUI
         #endregion
 
         private DevExpress.XtraCharts.ChartControl chartControl1;
-        private System.Windows.Forms.BindingSource transactionBindingSource;
+        private System.Windows.Forms.BindingSource resourceModelBindingSource;
     }
 }

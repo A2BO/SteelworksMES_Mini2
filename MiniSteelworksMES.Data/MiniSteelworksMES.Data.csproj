@@ -119,6 +119,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Mes.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\ResourceModel.cs" />
     <Compile Include="Model\TransactionModel.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>Mes.tt</DependentUpon>
