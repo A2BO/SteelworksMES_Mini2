@@ -30,6 +30,9 @@ namespace MiniSteelworksMES.Data.Dao
             }
         }
 
+
+
+
         //public List<Sale> Search()
         //{
         //    using (MesEntities context = new MesEntities())

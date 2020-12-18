@@ -32,5 +32,10 @@ namespace MesUI
 
             //transactionBindingSource.DataSource = Dao.Transaction.Search();
         }
+
+        private void chartControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

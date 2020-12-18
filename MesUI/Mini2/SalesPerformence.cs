@@ -26,7 +26,7 @@ namespace MesUI
             //    return;
 
             //List<SalesPerformence> list = Dao.salesPerformence.GetAll();
-            teamBindingSource.DataSource = Dao.Team.GetAll();
+            bdsModel.DataSource = Dao.Team.GetModel();
         }
 
         private void chartControl1_Click(object sender, EventArgs e)

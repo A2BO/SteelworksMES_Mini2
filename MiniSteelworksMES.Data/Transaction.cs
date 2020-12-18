@@ -22,6 +22,8 @@ namespace MiniSteelworksMES.Data
         public int Type { get; set; }
         public int ResourceWareHouseId { get; set; }
         public int Quantity { get; set; }
+        public Nullable<double> Longgitude_Member { get; set; }
+        public Nullable<double> Latitude_Member { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual Resource Resource { get; set; }

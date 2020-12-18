@@ -18,6 +18,7 @@ namespace MiniSteelworksMES.Data
         public Team()
         {
             this.Employees = new HashSet<Employee>();
+            this.Sales = new HashSet<Sale>();
         }
     
         public int TeamId { get; set; }
@@ -26,5 +27,7 @@ namespace MiniSteelworksMES.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee> Employees { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sale> Sales { get; set; }
     }
 }

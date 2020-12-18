@@ -36,8 +36,8 @@ namespace MiniSteelworksMES.Data
         public virtual DbSet<Resource> Resources { get; set; }
         public virtual DbSet<Resource_Quote> Resource_Quotes { get; set; }
         public virtual DbSet<ResourceWareHouse> ResourceWareHouses { get; set; }
+        public virtual DbSet<Transaction> Transactions { get; set; }
         public virtual DbSet<Sale> Sales { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
-        public virtual DbSet<Transaction> Transactions { get; set; }
     }
 }

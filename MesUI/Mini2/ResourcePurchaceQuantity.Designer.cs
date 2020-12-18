@@ -61,6 +61,7 @@ namespace MesUI
             this.chartControl1.SeriesTemplate.View = lineSeriesView1;
             this.chartControl1.Size = new System.Drawing.Size(1121, 618);
             this.chartControl1.TabIndex = 0;
+            this.chartControl1.Click += new System.EventHandler(this.chartControl1_Click);
             // 
             // resourceModelBindingSource
             // 
