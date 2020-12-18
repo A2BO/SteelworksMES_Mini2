@@ -273,6 +273,9 @@
     <EmbeddedResource Include="Mini2\ResourcePurchaceQuantity.resx">
       <DependentUpon>ResourcePurchaceQuantity.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mini2\SalesPerformence.resx">
+      <DependentUpon>SalesPerformence.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
