@@ -120,6 +120,7 @@
       <DependentUpon>Mes.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\OriginModel.cs" />
+    <Compile Include="Model\ProductSalesQuantityModel.cs" />
     <Compile Include="Model\ResourceModel.cs" />
     <Compile Include="Model\SaleModel.cs" />
     <Compile Include="Model\TransactionModel.cs" />

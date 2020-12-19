@@ -328,6 +328,8 @@
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.GrowthRate.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Order.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Product.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.ProductSalesQuantityModel.datasource" />
+    <None Include="Properties\DataSources\MiniSteelworksMES.Data.ProductSalesQuantityModel2.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.ProductWareHouse.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.Resource1.datasource" />
     <None Include="Properties\DataSources\MiniSteelworksMES.Data.ResourceModel.datasource" />

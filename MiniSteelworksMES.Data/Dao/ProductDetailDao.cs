@@ -28,5 +28,32 @@ namespace MiniSteelworksMES.Data.Dao
                 return query.ToList();
             }
         }
+        public List<ProductSalesQuantityModel2> GetModels()
+        {
+            {
+                using (var context = DbContextCreator.Create())
+                {
+                    List<ProductDetail> productdetails = context.ProductDetails.ToList();
+
+                    var query = from x in context.ProductDetails
+                                group x by x.ProductId into g
+                                select g;
+
+                    // 달성건수 추가
+                    List<ProductSalesQuantityModel2> ProductSalesQuantityModels = new List<ProductSalesQuantityModel2>();
+                    foreach (var g in query)
+                    {
+                        ProductSalesQuantityModel2 PSmodel = new ProductSalesQuantityModel2();
+                        PSmodel.Type = "판매량";
+                        PSmodel.Amount = g.Count();
+                        PSmodel.Product = productdetails.Find(p => p.ProductDetailId == g.Key).Name;
+
+                        ProductSalesQuantityModels.Add(PSmodel);
+                    }
+
+                    return ProductSalesQuantityModels;
+                }
+            }
+        }
     }
 }

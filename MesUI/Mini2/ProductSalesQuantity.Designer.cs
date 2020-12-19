@@ -30,25 +30,32 @@ namespace MesUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
-            this.saleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productSalesQuantityModel2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productSalesQuantityModel2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // chartControl1
             // 
-            this.chartControl1.DataSource = this.saleBindingSource;
+            this.chartControl1.DataSource = this.productSalesQuantityModel2BindingSource;
             this.chartControl1.Location = new System.Drawing.Point(14, 15);
             this.chartControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chartControl1.Name = "chartControl1";
+            this.chartControl1.SeriesDataMember = "Type";
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+            this.chartControl1.SeriesTemplate.ArgumentDataMember = "Type";
+            this.chartControl1.SeriesTemplate.SeriesDataMember = "Type";
+            this.chartControl1.SeriesTemplate.ValueDataMembersSerializable = "Amount";
+            this.chartControl1.SeriesTemplate.View = pieSeriesView1;
             this.chartControl1.Size = new System.Drawing.Size(887, 532);
             this.chartControl1.TabIndex = 0;
             // 
-            // saleBindingSource
+            // productSalesQuantityModel2BindingSource
             // 
-            this.saleBindingSource.DataSource = typeof(MiniSteelworksMES.Data.Sale);
+            this.productSalesQuantityModel2BindingSource.DataSource = typeof(MiniSteelworksMES.Data.ProductSalesQuantityModel2);
             // 
             // ProductSalesQuantity
             // 
@@ -59,8 +66,9 @@ namespace MesUI
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProductSalesQuantity";
             this.Text = "ProductSalesQuantity";
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productSalesQuantityModel2BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -68,6 +76,6 @@ namespace MesUI
         #endregion
 
         private DevExpress.XtraCharts.ChartControl chartControl1;
-        private System.Windows.Forms.BindingSource saleBindingSource;
+        private System.Windows.Forms.BindingSource productSalesQuantityModel2BindingSource;
     }
 }
