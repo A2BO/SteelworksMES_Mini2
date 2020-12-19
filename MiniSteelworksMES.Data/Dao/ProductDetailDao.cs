@@ -35,8 +35,10 @@ namespace MiniSteelworksMES.Data.Dao
                 {
                     List<ProductDetail> productdetails = context.ProductDetails.ToList();
 
-                    var query = from x in context.ProductDetails
-                                group x by x.ProductId into g
+                    var query = from p in context.ProductDetails
+                                from s in context.Sales.Where(x => x.Amount == p.ProductId).DefaultIfEmpty()
+                                group p by p.ProductId into g
+
                                 select g;
 
                     // 달성건수 추가

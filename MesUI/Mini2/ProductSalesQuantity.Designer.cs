@@ -53,10 +53,6 @@ namespace MesUI
             this.chartControl1.Size = new System.Drawing.Size(887, 532);
             this.chartControl1.TabIndex = 0;
             // 
-            // productSalesQuantityModel2BindingSource
-            // 
-            this.productSalesQuantityModel2BindingSource.DataSource = typeof(MiniSteelworksMES.Data.ProductSalesQuantityModel2);
-            // 
             // ProductSalesQuantity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
