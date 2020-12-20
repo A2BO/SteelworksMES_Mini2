@@ -36,26 +36,23 @@ namespace MiniSteelworksMES.Data.Dao
                     List<ProductDetail> productdetails = context.ProductDetails.ToList();
 
                     var query = from p in context.ProductDetails
-                                from s in context.Sales.Where(x => x.Amount == p.ProductId).DefaultIfEmpty()
-                                group p by p.ProductId into g
+                                join s in context.Sales on p.ProductDetailId equals s.ProductDetailId
+                                select new { ProductId = p.ProductId, ProductDetailId = p.ProductDetailId, Amount = s.Amount};
 
-                                select g;
 
-                    // 달성건수 추가
-                    List<ProductSalesQuantityModel2> ProductSalesQuantityModels = new List<ProductSalesQuantityModel2>();
-                    foreach (var g in query)
-                    {
-                        ProductSalesQuantityModel2 PSmodel = new ProductSalesQuantityModel2();
-                        PSmodel.Type = "판매량";
-                        PSmodel.Amount = g.Count();
-                        PSmodel.Product = productdetails.Find(p => p.ProductDetailId == g.Key).Name;
+                    var query1 = query.GroupBy(x => x.ProductId, x => x.Amount, 
+                        (key, info) => new ProductSalesQuantityModel2 { ProductId = key, Amount = info.Sum() });
 
-                        ProductSalesQuantityModels.Add(PSmodel);
-                    }
-
-                    return ProductSalesQuantityModels;
+                    return query1.ToList();
                 }
             }
+
+            
         }
+        //public class temp
+        //{
+        //    public int ProductId;
+        //    public int Amount;
+        //}
     }
 }

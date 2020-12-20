@@ -30,26 +30,34 @@ namespace MesUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.productSalesQuantityModel2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productSalesQuantityModel2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // chartControl1
             // 
             this.chartControl1.DataSource = this.productSalesQuantityModel2BindingSource;
-            this.chartControl1.Location = new System.Drawing.Point(12, 12);
+            this.chartControl1.Location = new System.Drawing.Point(14, 15);
+            this.chartControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chartControl1.Name = "chartControl1";
-            this.chartControl1.SeriesDataMember = "Type";
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl1.SeriesTemplate.ArgumentDataMember = "Type";
-            this.chartControl1.SeriesTemplate.SeriesDataMember = "Type";
+            series1.ArgumentDataMember = "ProductId";
+            series1.Name = "Series 1";
+            series1.ValueDataMembersSerializable = "Amount";
+            series1.View = pieSeriesView1;
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.chartControl1.SeriesTemplate.ArgumentDataMember = "ProductId";
             this.chartControl1.SeriesTemplate.ValueDataMembersSerializable = "Amount";
-            this.chartControl1.SeriesTemplate.View = pieSeriesView1;
-            this.chartControl1.Size = new System.Drawing.Size(776, 426);
+            this.chartControl1.SeriesTemplate.View = pieSeriesView2;
+            this.chartControl1.Size = new System.Drawing.Size(887, 532);
             this.chartControl1.TabIndex = 0;
             // 
             // productSalesQuantityModel2BindingSource
@@ -58,13 +66,16 @@ namespace MesUI
             // 
             // ProductSalesQuantity
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 562);
             this.Controls.Add(this.chartControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProductSalesQuantity";
             this.Text = "제품군별 판매량";
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productSalesQuantityModel2BindingSource)).EndInit();
             this.ResumeLayout(false);
