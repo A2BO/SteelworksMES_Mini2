@@ -43,11 +43,13 @@ Microsoft MS-SQL Server 2019
 
 ![원자재 시세조회](https://user-images.githubusercontent.com/74530618/102707792-4d7c5200-42e1-11eb-822c-536a4af1ccd2.jpg)
 
+
 ### 2. 광물별 구매비율
 
 #### 원자재별로 현시점까지 구매한 비율을 Pie Chart로 표시
 
 ![광물별 구매비율](https://user-images.githubusercontent.com/74530618/102707871-0a6eae80-42e2-11eb-8ac7-09f24ecedb0c.jpg)
+
 
 ### 3. 원산지별 광물 구매량
 
@@ -55,15 +57,18 @@ Microsoft MS-SQL Server 2019
 
 -버블 클릭시 광물별 상세 판매량을 바차트로 표시
 
+
 ### 4. 제품군별 판매량
 
 #### Product 테이블의 제품군별 판매량을 Pie Chart로 표시
 
 ![제품군별 판매량](https://user-images.githubusercontent.com/74530618/102708008-1c048600-42e3-11eb-9eb8-a52e57e8c008.jpg)
 
+
 ### 5. 기간당 매출이익
 
 #### 기간당 제품판매이익, 광물구매비, 인건비, 유지보수비, 운송비 등을 합산한 매출이익을 피벗테이블로 표시
+
 
 ### 6. 기간당 지출
 
@@ -71,11 +76,13 @@ Microsoft MS-SQL Server 2019
 
 ![기간당 지출](https://user-images.githubusercontent.com/74530618/102708197-89fd7d00-42e4-11eb-8657-2b20810e12f3.jpg)
 
+
 ### 7. 영업이익
 
 #### 영업팀별 목표건수와 달성건수를 Side-by-Side Bar Chart로 표시
 
 ![영업이익](https://user-images.githubusercontent.com/74530618/102708254-fc6e5d00-42e4-11eb-85bd-e1e346706f2c.jpg)
+
 
 ### 8. 회사성장률
 
