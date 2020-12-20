@@ -94,6 +94,6 @@ Microsoft MS-SQL Server 2019
  1. 원자재 구매비율 차트 - 범례가 원자재 이름으로 표현되지않는 문제
  
 ## 원인
- 1. 차트 데이터에 Resource테이블의 Name컬럼이 
+ 1. 차트 데이터에 Resource테이블의 Name컬럼이 추가되지않음
 ## 해결 방법
 
