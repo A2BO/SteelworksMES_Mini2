@@ -43,14 +43,16 @@ namespace MesUI
             // chartControl1
             // 
             this.chartControl1.DataSource = this.bdsExpense;
+            xyDiagram3D1.AxisX.MinorCount = 2;
             xyDiagram3D1.AxisY.Interlaced = false;
             xyDiagram3D1.AxisY.MinorCount = 2;
-            xyDiagram3D1.RotationMatrixSerializable = "-0.999615669060522;-0.0156085059887642;-0.022910449788652;0;-0.0175629249545107;0" +
-    ".995988087421189;0.087745503486779;0;0.0214489588502941;0.0881141546853001;-0.99" +
-    "5879429403159;0;0;0;0;1";
+            xyDiagram3D1.RotationMatrixSerializable = "-0.884960001053418;-0.260030196139634;0.386303111081461;0;-0.0618609590645943;0.8" +
+    "87863602689934;0.455929210253232;0;-0.46153983390303;0.379582033444835;-0.801809" +
+    "492090702;0;0;0;0;1";
             this.chartControl1.Diagram = xyDiagram3D1;
             this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControl1.Location = new System.Drawing.Point(0, 0);
+            this.chartControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chartControl1.Name = "chartControl1";
             this.chartControl1.SeriesDataMember = "CategoryName";
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
@@ -58,7 +60,7 @@ namespace MesUI
             this.chartControl1.SeriesTemplate.SeriesDataMember = "CategoryName";
             this.chartControl1.SeriesTemplate.ValueDataMembersSerializable = "Cost";
             this.chartControl1.SeriesTemplate.View = line3DSeriesView1;
-            this.chartControl1.Size = new System.Drawing.Size(940, 554);
+            this.chartControl1.Size = new System.Drawing.Size(822, 443);
             this.chartControl1.TabIndex = 0;
             // 
             // bdsExpense
@@ -67,12 +69,13 @@ namespace MesUI
             // 
             // ExpenseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 554);
+            this.ClientSize = new System.Drawing.Size(822, 443);
             this.Controls.Add(this.chartControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ExpenseForm";
-            this.Text = "Expense";
+            this.Text = "기간당 지출";
             ((System.ComponentModel.ISupportInitialize)(xyDiagram3D1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(line3DSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();

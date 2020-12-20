@@ -52,12 +52,16 @@ namespace MesUI
             // 
             // chartControl1
             // 
+            this.chartControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chartControl1.DataSource = this.growthRateBindingSource;
             xyDiagram1.AxisX.Alignment = DevExpress.XtraCharts.AxisAlignment.Zero;
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             this.chartControl1.Diagram = xyDiagram1;
-            this.chartControl1.Location = new System.Drawing.Point(47, 25);
+            this.chartControl1.Location = new System.Drawing.Point(12, 11);
+            this.chartControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chartControl1.Name = "chartControl1";
             series1.ArgumentDataMember = "CompanyName";
             series1.Name = "1분기대비";
@@ -83,7 +87,7 @@ namespace MesUI
         series3,
         series4,
         series5};
-            this.chartControl1.Size = new System.Drawing.Size(710, 542);
+            this.chartControl1.Size = new System.Drawing.Size(946, 573);
             this.chartControl1.TabIndex = 0;
             // 
             // growthRateBindingSource
@@ -92,10 +96,11 @@ namespace MesUI
             // 
             // GrowthRate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1109, 744);
+            this.ClientSize = new System.Drawing.Size(970, 595);
             this.Controls.Add(this.chartControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "GrowthRate";
             this.Text = "자사, 경쟁사 성장률 비교";
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
