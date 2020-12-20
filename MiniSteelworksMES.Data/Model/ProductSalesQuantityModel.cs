@@ -24,6 +24,7 @@ namespace MiniSteelworksMES.Data
     public class ProductSalesQuantityModel2
     {
         public string Type { get; set; } // 판매량
+
         public int Amount { get; set; } // amount
 
         public string Product { get; set; }

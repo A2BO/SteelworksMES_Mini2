@@ -23,11 +23,7 @@ namespace MesUI
         {
             base.OnLoad(e);
 
-            if (DesignMode)
-                return;
-
-            var transactions = Dao.Transaction.GetModels();
-            transactionModelBindingSource.DataSource = transactions;
+            transactionModel2BindingSource.DataSource = Dao.Transaction.GetModels();
 
 
         }
@@ -36,5 +32,27 @@ namespace MesUI
         {
 
         }
+
+        //private void simpleButton1_Click(object sender, EventArgs e)
+        //{
+
+        //    List<Transaction> list = Dao.Transaction.GetByDate(dateTimeOffsetEdit1.DateTimeOffset, dateTimeOffsetEdit2.DateTimeOffset);
+
+        //    if (dateTimeOffsetEdit1.DateTimeOffset > dateTimeOffsetEdit2.DateTimeOffset)
+        //    {
+        //        MessageBox.Show("기간이 잘못되었음", "오류");
+        //    }
+
+        //    if (dateTimeOffsetEdit1.DateTimeOffset <= dateTimeOffsetEdit2.DateTimeOffset && list.Count == 0)
+        //    {
+        //        MessageBox.Show("조회 기간에 시세 데이터가 없습니다.");
+        //    }
+        //    for (int i = 0; i < chartControl1.Series.Count; i++)
+        //    {
+        //        chartControl1.Series[i].ArgumentDataMember = "date";
+        //    }
+
+        //    transactionModel2BindingSource.DataSource = list;
+        //}
     }
 }

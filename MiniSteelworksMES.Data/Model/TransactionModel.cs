@@ -15,7 +15,24 @@ namespace MiniSteelworksMES.Data
         }
 
         public int ResourceId { get; set; }
+        public string SellerName { get; set; }
+        public System.DateTime Date { get; set; }
+        public int EmployeeId { get; set; }
+        public int Type { get; set; }
+        public int ResourceWareHouseId { get; set; }
+        public int Quantity { get; set; }
+        public int OriginId { get; set; }
+
+
+        
+    }
+
+    public class TransactionModel2
+    {
+        public string Type { get; set; }
 
         public int Quantity { get; set; }
+
+        public string Resource { get; set; }
     }
 }

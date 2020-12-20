@@ -63,7 +63,7 @@ namespace MiniSteelworksMES.Data
             }
         }
 
-        public List<Transaction> GetByDate(DateTime start, DateTime end)
+        public List<Transaction> GetByDate(DateTimeOffset start, DateTimeOffset end)
         {
             using (var context = DbContextCreator.Create())
             {
@@ -71,6 +71,8 @@ namespace MiniSteelworksMES.Data
                             where x.Date >= start && x.Date <= end
                             select x;
 
+                List<Transaction> list = query.ToList();
+                
                 return query.ToList();
             }
         }
@@ -153,68 +155,76 @@ namespace MiniSteelworksMES.Data
             }
             
         }
-        //public List<OriginModel> OriginGetModels()
+
+        //public List<TransactionModel> GetModels()
         //{
         //    using (MesEntities context = (MesEntities)DbContextCreator.Create())
         //    {
-        //        var query1 = from x in context.Transactions
-        //                    let OriginCount = x.Origin.Count()
-        //                    orderby OriginCount descending
-        //                     select new OriginModel
-        //                    {
-        //                        Origin = x.Origin,
-        //                        OriginCount = OriginCount
-        //                    };
-
         //        var query = (from x in context.Transactions
-        //                     select x).GroupBy(x => x.Origin).Select(
+        //                     select x).GroupBy(x => x.ResourceId).Select(
         //            group => new
         //            {
-        //                group.FirstOrDefault().Origin,
+        //                group.FirstOrDefault().ResourceId,
         //                Quantity = group.Sum(
-        //                    x => x.Quantity)
+        //                x => x.Quantity)
         //            });
-                
-        //        List<OriginModel> list = new List<OriginModel>();
+
+        //        List<TransactionModel> list = new List<TransactionModel>();
 
         //        foreach (var item in query)
         //        {
         //            if (item != null)
-        //                list.Add(new OriginModel(item.Origin, item.Quantity));
+        //                list.Add(new TransactionModel(item.ResourceId, item.Quantity));
+        //        }
+
+        //        foreach (var item in list)
+        //        {
+        //            Debug.WriteLine(item.ResourceId + " " + item.Quantity);
         //        }
 
         //        return list;
         //    }
         //}
 
-        public List<TransactionModel> GetModels()
+        public List<TransactionModel2> GetModels()
         {
-            using (MesEntities context = (MesEntities)DbContextCreator.Create())
             {
-                var query = (from x in context.Transactions
-                             select x).GroupBy(x => x.ResourceId).Select(
-                    group => new
+                using (var context = DbContextCreator.Create())
+                {
+                    List<Resource> resources = context.Resources.ToList();
+
+                    var query = from p in context.Resources
+                                from s in context.Transactions.Where(x => x.Quantity == p.ResourceId).DefaultIfEmpty()
+                                group p by p.ResourceId into g
+
+                                select g;
+
+                    List<TransactionModel2> transactionModel2s = new List<TransactionModel2>();
+                    foreach (var g in query)
                     {
-                        group.FirstOrDefault().ResourceId,
-                        Quantity = group.Sum(
-                        x => x.Quantity)
-                    });
+                        TransactionModel2 PSmodel = new TransactionModel2();
+                        PSmodel.Quantity = g.Count();
+                        PSmodel.Resource = resources.Find(p => p.ResourceId == g.Key).Name;
 
-                List<TransactionModel> list = new List<TransactionModel>();
+                        transactionModel2s.Add(PSmodel);
+                    }
 
-                foreach (var item in query)
-                {
-                    if (item != null)
-                        list.Add(new TransactionModel(item.ResourceId, item.Quantity));
+                    return transactionModel2s;
                 }
-
-                foreach (var item in list)
-                {
-                    Debug.WriteLine(item.ResourceId + " " + item.Quantity);
-                }
-
-                return list;
             }
         }
+        //public List<TransactionModel> GetByDate2(DateTime start, DateTime end)
+        //{
+        //    using (var context = DbContextCreator.Create())
+        //    {
+        //        var query = from x in context.Transactions
+        //                    where x.Date >= start && x.Date <= end
+        //                    select x;
+
+        //        //var transactions = query.ToList();
+        //        List<TransactionModel> transactionModels = new List<TransactionModel>();
+        //        return transactionModels();
+        //    }
+        //}
     }
 }
