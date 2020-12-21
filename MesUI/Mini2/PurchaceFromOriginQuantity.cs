@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraMap;
+using MiniSteelworksMES.Data.Dao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,22 +14,16 @@ namespace MesUI
 {
     public partial class PurchaceFromOriginQuantity : Form
     {
-        VectorItemsLayer BubbleChartDataAdapter1 { get { return (VectorItemsLayer)mapControl1.Layers["bubbleChartDataAdapter1"]; } }
-
-        const string bingKey = "AgvMO35OGV6SrETYJ66iBZkuemtqDfYvwqHv4in8tjYI7TJU5zG5SZYI-3l-vZZC";
-     
         public PurchaceFromOriginQuantity()
         {
             InitializeComponent();
 
-            BingSearchDataProvider searchProvider = new BingSearchDataProvider()
-            {
-                BingKey = bingKey
-            };
-
-
         }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
 
-
+            originModelBindingSource.DataSource = Dao.Transaction.GetModels2();
+        }
     }
 }

@@ -53,14 +53,14 @@ namespace MesUI
             this.bingMapDataProvider1.BingKey = "AgvMO35OGV6SrETYJ66iBZkuemtqDfYvwqHv4in8tjYI7TJU5zG5SZYI-3l-vZZC";
             this.bingMapDataProvider1.Kind = DevExpress.XtraMap.BingMapKind.Road;
             this.vectorItemsLayer1.Data = this.bubbleChartDataAdapter1;
-            this.bubbleChartDataAdapter1.DataMember = null;
             this.bubbleChartDataAdapter1.DataSource = this.originModelBindingSource;
-            this.bubbleChartDataAdapter1.Mappings.Latitude = "Latitude";
-            this.bubbleChartDataAdapter1.Mappings.Longitude = "Longgitude";
+            this.bubbleChartDataAdapter1.ItemMaxSize = 200;
+            this.bubbleChartDataAdapter1.ItemMinSize = 50;
+            this.bubbleChartDataAdapter1.Mappings.BubbleGroup = "OriginName";
+            this.bubbleChartDataAdapter1.Mappings.Latitude = "Longgitude";
+            this.bubbleChartDataAdapter1.Mappings.Longitude = "Latitude";
             this.bubbleChartDataAdapter1.Mappings.Text = "OriginName";
             this.bubbleChartDataAdapter1.Mappings.Value = "Quantity";
-            this.bubbleChartDataAdapter1.Mappings.XCoordinate = "Latitude";
-            this.bubbleChartDataAdapter1.Mappings.YCoordinate = "Longgitude";
             // 
             // originModelBindingSource
             // 
@@ -73,7 +73,7 @@ namespace MesUI
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.mapControl1);
             this.Name = "PurchaceFromOriginQuantity";
-            this.Text = "PurchaceFromOriginQuantity";
+            this.Text = "원산지별 광물구매량";
             ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.originModelBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -86,7 +86,7 @@ namespace MesUI
         private DevExpress.XtraMap.ImageLayer imageLayer1;
         private DevExpress.XtraMap.BingMapDataProvider bingMapDataProvider1;
         private DevExpress.XtraMap.VectorItemsLayer vectorItemsLayer1;
-        private DevExpress.XtraMap.BubbleChartDataAdapter bubbleChartDataAdapter1;
         private System.Windows.Forms.BindingSource originModelBindingSource;
+        private DevExpress.XtraMap.BubbleChartDataAdapter bubbleChartDataAdapter1;
     }
 }
