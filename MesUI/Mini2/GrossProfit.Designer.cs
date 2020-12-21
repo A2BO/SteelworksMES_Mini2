@@ -30,57 +30,83 @@ namespace MesUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.BubbleSeriesView bubbleSeriesView1 = new DevExpress.XtraCharts.BubbleSeriesView();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
-            this.originModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(bubbleSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.originModelBindingSource)).BeginInit();
+            this.pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
+            this.grossProfitBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fieldName = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldDate = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldCost = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldCategory = new DevExpress.XtraPivotGrid.PivotGridField();
+            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grossProfitBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // chartControl1
+            // pivotGridControl1
             // 
-            this.chartControl1.DataSource = this.originModelBindingSource;
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl1.Diagram = xyDiagram1;
-            this.chartControl1.Location = new System.Drawing.Point(12, 12);
-            this.chartControl1.Name = "chartControl1";
-            this.chartControl1.SeriesDataMember = "OriginId";
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl1.SeriesTemplate.ArgumentDataMember = "OriginId";
-            this.chartControl1.SeriesTemplate.SeriesDataMember = "OriginId";
-            this.chartControl1.SeriesTemplate.ValueDataMembersSerializable = "Quantity;Quantity";
-            this.chartControl1.SeriesTemplate.View = bubbleSeriesView1;
-            this.chartControl1.Size = new System.Drawing.Size(974, 504);
-            this.chartControl1.TabIndex = 1;
+            this.pivotGridControl1.DataSource = this.grossProfitBindingSource;
+            this.pivotGridControl1.Fields.AddRange(new DevExpress.XtraPivotGrid.PivotGridField[] {
+            this.fieldName,
+            this.fieldDate,
+            this.fieldCost,
+            this.fieldCategory});
+            this.pivotGridControl1.Location = new System.Drawing.Point(1, 0);
+            this.pivotGridControl1.Name = "pivotGridControl1";
+            this.pivotGridControl1.OptionsData.DataProcessingEngine = DevExpress.XtraPivotGrid.PivotDataProcessingEngine.Optimized;
+            this.pivotGridControl1.Size = new System.Drawing.Size(996, 528);
+            this.pivotGridControl1.TabIndex = 2;
             // 
-            // originModelBindingSource
+            // grossProfitBindingSource
             // 
-            this.originModelBindingSource.DataSource = typeof(MiniSteelworksMES.Data.OriginModel);
+            this.grossProfitBindingSource.DataSource = typeof(MiniSteelworksMES.Data.GrossProfit);
+            // 
+            // fieldName
+            // 
+            this.fieldName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldName.AreaIndex = 1;
+            this.fieldName.FieldName = "Name";
+            this.fieldName.Name = "fieldName";
+            // 
+            // fieldDate
+            // 
+            this.fieldDate.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
+            this.fieldDate.AreaIndex = 0;
+            this.fieldDate.FieldName = "Date";
+            this.fieldDate.Name = "fieldDate";
+            // 
+            // fieldCost
+            // 
+            this.fieldCost.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldCost.AreaIndex = 0;
+            this.fieldCost.FieldName = "Cost";
+            this.fieldCost.Name = "fieldCost";
+            // 
+            // fieldCategory
+            // 
+            this.fieldCategory.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldCategory.AreaIndex = 0;
+            this.fieldCategory.FieldName = "Category";
+            this.fieldCategory.Name = "fieldCategory";
             // 
             // GrossProfit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 528);
-            this.Controls.Add(this.chartControl1);
+            this.Controls.Add(this.pivotGridControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "GrossProfit";
             this.Text = "GrossProfit";
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(bubbleSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.originModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grossProfitBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private DevExpress.XtraCharts.ChartControl chartControl1;
-        private System.Windows.Forms.BindingSource originModelBindingSource;
+        private DevExpress.XtraPivotGrid.PivotGridControl pivotGridControl1;
+        private System.Windows.Forms.BindingSource grossProfitBindingSource;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldName;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldDate;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldCost;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldCategory;
     }
 }
