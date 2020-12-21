@@ -96,4 +96,4 @@ Microsoft MS-SQL Server 2019
 ## 원인
  1. 차트 데이터에 Resource테이블의 Name컬럼이 추가되지않음
 ## 해결 방법
-
+ 1. 딕셔너리 resourceNames를 생성해 Argument에 ResourceName 입력
