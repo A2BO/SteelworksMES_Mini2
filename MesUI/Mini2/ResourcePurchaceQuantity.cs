@@ -23,7 +23,7 @@ namespace MesUI
         {
             base.OnLoad(e);
 
-            transactionModel2BindingSource.DataSource = Dao.Transaction.GetModels();
+            transactionModelBindingSource.DataSource = Dao.Transaction.GetModels();
 
 
         }

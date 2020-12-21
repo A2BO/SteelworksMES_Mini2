@@ -177,45 +177,28 @@ namespace MiniSteelworksMES.Data
         //    }
         //}
 
-        public List<TransactionModel2> GetModels()
+        public List<TransactionModel> GetModels()
         {
+            using (MesEntities context = (MesEntities)DbContextCreator.Create())
             {
-                using (var context = DbContextCreator.Create())
+                Dictionary<int, string> resourceNames = context.Resources.ToDictionary(x => x.ResourceId, x => x.Name);
+
+                var query = from x in context.Transactions
+                            group x by x.ResourceId into g
+                            select g;
+
+                List<TransactionModel> models = new List<TransactionModel>();
+                foreach (var @group in query)
                 {
-                    List<Resource> resources = context.Resources.ToList();
+                    TransactionModel model = new TransactionModel(group.Key, group.Sum(x => x.Quantity));//key는 위에서 만든 g의 ResourceId
+                    model.ResourceName = resourceNames[model.ResourceId];
 
-                    var query = from p in context.Resources
-                                from s in context.Transactions.Where(x => x.Quantity == p.ResourceId).DefaultIfEmpty()
-                                group p by p.ResourceId into g
-
-                                select g;
-
-                    List<TransactionModel2> transactionModel2s = new List<TransactionModel2>();
-                    foreach (var g in query)
-                    {
-                        TransactionModel2 PSmodel = new TransactionModel2();
-                        PSmodel.Quantity = g.Count();
-                        PSmodel.Resource = resources.Find(p => p.ResourceId == g.Key).Name;
-
-                        transactionModel2s.Add(PSmodel);
-                    }
-
-                    return transactionModel2s;
+                    models.Add(model);
                 }
+
+                return models;
             }
         }
-        //public List<TransactionModel> GetByDate2(DateTime start, DateTime end)
-        //{
-        //    using (var context = DbContextCreator.Create())
-        //    {
-        //        var query = from x in context.Transactions
-        //                    where x.Date >= start && x.Date <= end
-        //                    select x;
 
-        //        //var transactions = query.ToList();
-        //        List<TransactionModel> transactionModels = new List<TransactionModel>();
-        //        return transactionModels();
-        //    }
-        //}
     }
 }
