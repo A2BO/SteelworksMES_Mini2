@@ -58,11 +58,11 @@ Microsoft MS-SQL Server 2019
 -버블 클릭시 광물별 상세 판매량을 바차트로 표시
 
 
-### 4. 제품군별 판매량
+### 4. 제품군별 판매비율
 
 #### Product 테이블의 제품군별 판매량을 Pie Chart로 표시
 
-![제품군별 판매량](https://user-images.githubusercontent.com/74530618/102708008-1c048600-42e3-11eb-9eb8-a52e57e8c008.jpg)
+![제품군별 구매비율](https://user-images.githubusercontent.com/74530618/102744486-4286f780-439d-11eb-9848-595f11b41e75.jpg)
 
 
 ### 5. 기간당 매출이익
