@@ -35,6 +35,18 @@
           <Property Name="ExpenseCategoryId" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="GrossProfit">
+          <Key>
+            <PropertyRef Name="GrossProfitId" />
+          </Key>
+          <Property Name="GrossProfitId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NameId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cost" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
         <EntityType Name="GrowthRate">
           <Key>
             <PropertyRef Name="GrowthRateId" />
@@ -353,6 +365,7 @@
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Expense" EntityType="Self.Expense" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ExpenseCategory" EntityType="Self.ExpenseCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GrossProfit" EntityType="Self.GrossProfit" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GrowthRate" EntityType="Self.GrowthRate" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Origin" EntityType="Self.Origin" Schema="dbo" store:Type="Tables" />
@@ -435,6 +448,7 @@
           <EntitySet Name="Employees" EntityType="MES01Model.Employee" />
           <EntitySet Name="Expenses" EntityType="MES01Model.Expense" />
           <EntitySet Name="ExpenseCategories" EntityType="MES01Model.ExpenseCategory" />
+          <EntitySet Name="GrossProfits" EntityType="MES01Model.GrossProfit" />
           <EntitySet Name="GrowthRates" EntityType="MES01Model.GrowthRate" />
           <EntitySet Name="Orders" EntityType="MES01Model.Order" />
           <EntitySet Name="Origins" EntityType="MES01Model.Origin" />
@@ -545,6 +559,18 @@
           <Property Name="ExpenseCategoryId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Expenses" Relationship="MES01Model.FK_Expense_ExpenseLine" FromRole="ExpenseCategory" ToRole="Expense" />
+        </EntityType>
+        <EntityType Name="GrossProfit">
+          <Key>
+            <PropertyRef Name="GrossProfitId" />
+          </Key>
+          <Property Name="GrossProfitId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="GrowthRate">
           <Key>
@@ -919,6 +945,19 @@
               <MappingFragment StoreEntitySet="ExpenseCategory">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ExpenseCategoryId" ColumnName="ExpenseCategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GrossProfits">
+            <EntityTypeMapping TypeName="MES01Model.GrossProfit">
+              <MappingFragment StoreEntitySet="GrossProfit">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameId" ColumnName="NameId" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="GrossProfitId" ColumnName="GrossProfitId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
