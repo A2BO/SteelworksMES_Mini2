@@ -57,6 +57,7 @@ Microsoft MS-SQL Server 2019
 
 -버블 클릭시 광물별 상세 판매량을 바차트로 표시
 
+![원산지별 광물구매량](https://user-images.githubusercontent.com/74530618/102748838-4ec38280-43a6-11eb-8b52-5aa9858bda57.jpg)
 
 ### 4. 제품군별 판매비율
 
