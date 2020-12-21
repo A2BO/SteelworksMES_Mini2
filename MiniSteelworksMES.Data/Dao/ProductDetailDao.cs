@@ -51,10 +51,25 @@ namespace MiniSteelworksMES.Data.Dao
 
             
         }
-        //public class temp
+        //같은 결과가나오는 코드
+        //public List<ProductSalesQuantityModel2> GetModels()
         //{
-        //    public int ProductId;
-        //    public int Amount;
+        //    {
+        //        using (var context = DbContextCreator.Create())
+        //        {
+        //            List<ProductDetail> productdetails = context.ProductDetails.ToList();
+
+        //            var query = from p in context.ProductDetails
+        //                        join s in context.Sales on p.ProductDetailId equals s.ProductDetailId
+        //                        select new { ProductId = p.ProductId, ProductDetailId = p.ProductDetailId, Amount = s.Amount };
+
+
+        //            var query1 = query.GroupBy(x => x.ProductId, x => x.Amount,
+        //                (key, info) => new ProductSalesQuantityModel2 { ProductId = key, Amount = info.Sum() });
+
+        //            return query1.ToList();
+        //        }
+        //    }
         //}
     }
 }

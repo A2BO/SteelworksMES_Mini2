@@ -30,6 +30,7 @@ namespace MesUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraCharts.Legend legend1 = new DevExpress.XtraCharts.Legend();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
             DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
@@ -45,10 +46,14 @@ namespace MesUI
             // chartControl1
             // 
             this.chartControl1.DataSource = this.productSalesQuantityModel2BindingSource;
-            this.chartControl1.Location = new System.Drawing.Point(6, 14);
+            legend1.Name = "Legend 1";
+            this.chartControl1.Legends.AddRange(new DevExpress.XtraCharts.Legend[] {
+            legend1});
+            this.chartControl1.Location = new System.Drawing.Point(6, 16);
             this.chartControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chartControl1.Name = "chartControl1";
-            series1.ArgumentDataMember = "ProductId";
+            series1.ArgumentDataMember = "ProductName";
+            series1.LegendTextPattern = "{A}";
             series1.Name = "Series 1";
             series1.ValueDataMembersSerializable = "Amount";
             series1.View = pieSeriesView1;
