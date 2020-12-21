@@ -18,16 +18,7 @@ namespace MiniSteelworksMES.Data.Dao
             return x => x.TeamId == key;
         }
 
-        public List<Team> GetAll()
-        {
-            using (var context = DbContextCreator.Create())
-            {
-                var query = from x in context.Teams
-                            select x;
-
-                return query.ToList();
-            }
-        }
+      
 
         public List<TheModel> GetModel()
         {

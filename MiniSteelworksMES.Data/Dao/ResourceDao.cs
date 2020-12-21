@@ -47,16 +47,7 @@ namespace MiniSteelworksMES.Data
             }
         }
 
-        public List<Resource> GetAll()
-        {
-            using (var context = DbContextCreator.Create())
-            {
-                var query = from x in context.Resources
-                            select x;
-
-                return query.ToList();
-            }
-        }
+      
 
         //public List<ResourceModel> GetModels()
         //{

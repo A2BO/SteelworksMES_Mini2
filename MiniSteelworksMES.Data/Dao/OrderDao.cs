@@ -18,16 +18,7 @@ namespace MiniSteelworksMES.Data.Dao
             return x => x.OrderId == key;
         }
 
-        public List<Order> GetAll()
-        {
-            using (var context = DbContextCreator.Create())
-            {
-                var query = from x in context.Orders
-                            select x;
-
-                return query.ToList();
-            }
-        }
+      
 
         public List<Order> GetByPK(string orderId)
         {

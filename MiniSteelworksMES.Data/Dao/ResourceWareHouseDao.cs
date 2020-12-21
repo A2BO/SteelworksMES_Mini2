@@ -18,16 +18,7 @@ namespace MiniSteelworksMES.Data.Dao
             return x => x.ResourceWareHouseId == key;
         }
 
-        public List<ResourceWareHouse> GetAll()
-        {
-            using (var context = DbContextCreator.Create())
-            {
-                var query = from x in context.ResourceWareHouses
-                            select x;
-
-                return query.ToList();
-            }
-        }
+      
 
 
 

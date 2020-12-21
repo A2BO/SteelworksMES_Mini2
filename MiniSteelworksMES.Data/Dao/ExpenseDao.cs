@@ -80,15 +80,6 @@ namespace MiniSteelworksMES.Data.Dao
         //    }
         //}
 
-        public List<Expense> GetAll()
-        {
-            using (var context = DbContextCreator.Create())
-            {
-                var query = from x in context.Expenses
-                            select x;
-
-                return query.ToList();
-            }
-        }
+       
     }
 }

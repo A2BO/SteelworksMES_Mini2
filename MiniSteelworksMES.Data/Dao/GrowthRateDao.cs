@@ -18,15 +18,6 @@ namespace MiniSteelworksMES.Data.Dao
             return x => x.GrowthRateId == key;
         }
 
-        public List<GrowthRate> GetAll()
-        {
-            using (var context = DbContextCreator.Create())
-            {
-                var query = from x in context.GrowthRates
-                            select x;
-
-                return query.ToList();
-            }
-        }
+       
     }
 }

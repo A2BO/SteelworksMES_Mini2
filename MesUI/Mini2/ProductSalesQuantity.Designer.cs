@@ -45,7 +45,7 @@ namespace MesUI
             // chartControl1
             // 
             this.chartControl1.DataSource = this.productSalesQuantityModel2BindingSource;
-            this.chartControl1.Location = new System.Drawing.Point(14, 15);
+            this.chartControl1.Location = new System.Drawing.Point(6, 14);
             this.chartControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chartControl1.Name = "chartControl1";
             series1.ArgumentDataMember = "ProductId";
@@ -54,7 +54,7 @@ namespace MesUI
             series1.View = pieSeriesView1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartControl1.SeriesTemplate.ArgumentDataMember = "ProductId";
+            this.chartControl1.SeriesTemplate.ArgumentDataMember = "ProductName";
             this.chartControl1.SeriesTemplate.ValueDataMembersSerializable = "Amount";
             this.chartControl1.SeriesTemplate.View = pieSeriesView2;
             this.chartControl1.Size = new System.Drawing.Size(887, 532);

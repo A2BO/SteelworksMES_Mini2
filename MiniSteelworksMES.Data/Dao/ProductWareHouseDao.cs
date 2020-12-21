@@ -18,16 +18,7 @@ namespace MiniSteelworksMES.Data.Dao
             return x => x.ProductWareHouseId == key;
         }
 
-        public List<ProductWareHouse> GetAll()
-        {
-            using (var context = DbContextCreator.Create())
-            {
-                var query = from x in context.ProductWareHouses
-                            select x;
-
-                return query.ToList();
-            }
-        }
+      
 
 
 

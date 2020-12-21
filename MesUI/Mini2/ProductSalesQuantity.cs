@@ -1,4 +1,5 @@
-﻿using MiniSteelworksMES.Data;
+﻿using DevExpress.XtraCharts;
+using MiniSteelworksMES.Data;
 using MiniSteelworksMES.Data.Dao;
 using System;
 using System.Collections.Generic;
@@ -12,13 +13,13 @@ using System.Windows.Forms;
 
 namespace MesUI
 {
+       
     public partial class ProductSalesQuantity : Form
     {
         public ProductSalesQuantity()
         {
             InitializeComponent();
         }
-        
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -29,5 +30,10 @@ namespace MesUI
             //List<SalesPerformence> list = Dao.salesPerformence.GetAll();
             productSalesQuantityModel2BindingSource.DataSource = Dao.ProductDetail.GetModels();
         }
+        private void chartControl1_SelectedItemsChanged(object sender, SelectedItemsChangedEventArgs e)
+        {
+            MessageBox.Show("Selected item - " + (e.NewItems[0] as SeriesPoint).Argument);
+        }
+        public bool RuntimeHitTesting { get; set; }
     }
 }

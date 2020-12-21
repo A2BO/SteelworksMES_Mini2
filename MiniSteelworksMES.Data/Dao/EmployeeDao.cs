@@ -49,16 +49,7 @@ namespace MiniSteelworksMES.Data.Dao
             }
         }
 
-        public List<Employee> GetAll()
-        {
-            using (var context = DbContextCreator.Create())
-            {
-                var query = from x in context.Employees
-                            select x;
-
-                return query.ToList();
-            }
-        }
+       
 
         public List<string> GetTeamNames()
         {
@@ -94,6 +85,7 @@ namespace MiniSteelworksMES.Data.Dao
                 return query.ToList();
             }
         }
+
 
         public void UpdateEmployee(List<string> list)
         {

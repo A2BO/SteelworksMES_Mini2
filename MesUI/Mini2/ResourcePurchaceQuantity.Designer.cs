@@ -54,7 +54,8 @@ namespace MesUI
     "71005492609;-0.465266135482736;0;0.178489134188515;0.494160574884692;0.850850724" +
     "396627;0;0;0;0;1";
             this.chartControl1.Diagram = simpleDiagram3D1;
-            this.chartControl1.Location = new System.Drawing.Point(12, 12);
+            this.chartControl1.Location = new System.Drawing.Point(14, 15);
+            this.chartControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chartControl1.Name = "chartControl1";
             series1.ArgumentDataMember = "Resource";
             series1.LegendTextPattern = "{A}";
@@ -64,7 +65,7 @@ namespace MesUI
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
             this.chartControl1.SeriesTemplate.View = pie3DSeriesView2;
-            this.chartControl1.Size = new System.Drawing.Size(749, 618);
+            this.chartControl1.Size = new System.Drawing.Size(856, 772);
             this.chartControl1.TabIndex = 0;
             this.chartControl1.Click += new System.EventHandler(this.chartControl1_Click);
             // 
@@ -74,10 +75,11 @@ namespace MesUI
             // 
             // ResourcePurchaceQuantity
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 642);
+            this.ClientSize = new System.Drawing.Size(883, 802);
             this.Controls.Add(this.chartControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ResourcePurchaceQuantity";
             this.Text = "광물별 구매비율";
             ((System.ComponentModel.ISupportInitialize)(simpleDiagram3D1)).EndInit();

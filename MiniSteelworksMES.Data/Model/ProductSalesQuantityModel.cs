@@ -27,5 +27,7 @@ namespace MiniSteelworksMES.Data
 
         public int Amount { get; set; } // amount
 
+        public string ProductName { get; set; }
+
     }
 }

@@ -17,16 +17,7 @@ namespace MiniSteelworksMES.Data.Dao
             return x => x.date == key;
         }
 
-        public List<Resource_Quote> GetAll()
-        {
-            using (var context = DbContextCreator.Create())
-            {
-                var query = from x in context.Resource_Quotes
-                            select x;
-
-                return query.ToList();
-            }
-        }
+       
 
         public List<Resource_Quote> GetByDate(DateTime start, DateTime end)
         {

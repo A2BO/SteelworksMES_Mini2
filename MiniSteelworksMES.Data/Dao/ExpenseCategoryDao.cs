@@ -18,15 +18,6 @@ namespace MiniSteelworksMES.Data.Dao
             return x => x.ExpenseCategoryId == key;
         }
 
-        public List<ExpenseCategory> GetAll()
-        {
-            using (var context = DbContextCreator.Create())
-            {
-                var query = from x in context.ExpenseCategories
-                            select x;
-
-                return query.ToList();
-            }
-        }
+        
     }
 }

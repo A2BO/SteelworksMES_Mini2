@@ -17,16 +17,7 @@ namespace MiniSteelworksMES.Data
             return x => x.ResourceId == key1 && x.Date == key2;
         }
 
-        public List<Transaction> GetAll()
-        {
-            using (var context = DbContextCreator.Create())
-            {
-                var query = from x in context.Transactions
-                            select x;
-
-                return query.ToList();
-            }
-        }
+       
 
         public List<Transaction> GetAllByPagingQuery(int showPage)
         {
