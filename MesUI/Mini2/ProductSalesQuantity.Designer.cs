@@ -30,39 +30,37 @@ namespace MesUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraCharts.Legend legend1 = new DevExpress.XtraCharts.Legend();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView3 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView4 = new DevExpress.XtraCharts.PieSeriesView();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.productSalesQuantityModel2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productSalesQuantityModel2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // chartControl1
             // 
+            this.chartControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chartControl1.DataSource = this.productSalesQuantityModel2BindingSource;
-            legend1.Name = "Legend 1";
-            this.chartControl1.Legends.AddRange(new DevExpress.XtraCharts.Legend[] {
-            legend1});
-            this.chartControl1.Location = new System.Drawing.Point(6, 16);
-            this.chartControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chartControl1.Location = new System.Drawing.Point(10, 8);
             this.chartControl1.Name = "chartControl1";
-            series1.ArgumentDataMember = "ProductName";
-            series1.LegendTextPattern = "{A}";
-            series1.Name = "Series 1";
-            series1.ValueDataMembersSerializable = "Amount";
-            series1.View = pieSeriesView1;
+            series2.ArgumentDataMember = "ProductName";
+            series2.LegendTextPattern = "{A}";
+            series2.Name = "Series 1";
+            series2.ValueDataMembersSerializable = "Amount";
+            series2.View = pieSeriesView3;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
+        series2};
             this.chartControl1.SeriesTemplate.ArgumentDataMember = "ProductName";
             this.chartControl1.SeriesTemplate.ValueDataMembersSerializable = "Amount";
-            this.chartControl1.SeriesTemplate.View = pieSeriesView2;
-            this.chartControl1.Size = new System.Drawing.Size(887, 532);
+            this.chartControl1.SeriesTemplate.View = pieSeriesView4;
+            this.chartControl1.Size = new System.Drawing.Size(815, 447);
             this.chartControl1.TabIndex = 0;
             // 
             // productSalesQuantityModel2BindingSource
@@ -71,16 +69,15 @@ namespace MesUI
             // 
             // ProductSalesQuantity
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 562);
+            this.ClientSize = new System.Drawing.Size(837, 467);
             this.Controls.Add(this.chartControl1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProductSalesQuantity";
-            this.Text = "제품군별 판매량";
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
+            this.Text = "제품군별 판매비율";
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productSalesQuantityModel2BindingSource)).EndInit();
             this.ResumeLayout(false);
