@@ -31,13 +31,13 @@ namespace MesUI
         {
             this.components = new System.ComponentModel.Container();
             this.mapControl1 = new DevExpress.XtraMap.MapControl();
-            this.bingMapDataProvider1 = new DevExpress.XtraMap.BingMapDataProvider();
             this.imageLayer1 = new DevExpress.XtraMap.ImageLayer();
+            this.bingMapDataProvider1 = new DevExpress.XtraMap.BingMapDataProvider();
             this.vectorItemsLayer1 = new DevExpress.XtraMap.VectorItemsLayer();
-            this.pieChartDataAdapter1 = new DevExpress.XtraMap.PieChartDataAdapter();
-            this.transactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bubbleChartDataAdapter1 = new DevExpress.XtraMap.BubbleChartDataAdapter();
+            this.originModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.originModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mapControl1
@@ -49,20 +49,22 @@ namespace MesUI
             this.mapControl1.Name = "mapControl1";
             this.mapControl1.Size = new System.Drawing.Size(800, 450);
             this.mapControl1.TabIndex = 0;
+            this.imageLayer1.DataProvider = this.bingMapDataProvider1;
             this.bingMapDataProvider1.BingKey = "AgvMO35OGV6SrETYJ66iBZkuemtqDfYvwqHv4in8tjYI7TJU5zG5SZYI-3l-vZZC";
             this.bingMapDataProvider1.Kind = DevExpress.XtraMap.BingMapKind.Road;
-            this.imageLayer1.DataProvider = this.bingMapDataProvider1;
-            this.vectorItemsLayer1.Data = this.pieChartDataAdapter1;
-            this.pieChartDataAdapter1.DataSource = this.transactionBindingSource;
-            this.pieChartDataAdapter1.Mappings.Latitude = "Latitude_Member";
-            this.pieChartDataAdapter1.Mappings.Longitude = "Longgitude_Member";
-            this.pieChartDataAdapter1.Mappings.PieSegment = "ResourceId";
-            this.pieChartDataAdapter1.Mappings.Text = "Origin";
-            this.pieChartDataAdapter1.Mappings.Value = "Quantity";
+            this.vectorItemsLayer1.Data = this.bubbleChartDataAdapter1;
+            this.bubbleChartDataAdapter1.DataMember = null;
+            this.bubbleChartDataAdapter1.DataSource = this.originModelBindingSource;
+            this.bubbleChartDataAdapter1.Mappings.Latitude = "Latitude";
+            this.bubbleChartDataAdapter1.Mappings.Longitude = "Longgitude";
+            this.bubbleChartDataAdapter1.Mappings.Text = "OriginName";
+            this.bubbleChartDataAdapter1.Mappings.Value = "Quantity";
+            this.bubbleChartDataAdapter1.Mappings.XCoordinate = "Latitude";
+            this.bubbleChartDataAdapter1.Mappings.YCoordinate = "Longgitude";
             // 
-            // transactionBindingSource
+            // originModelBindingSource
             // 
-            this.transactionBindingSource.DataSource = typeof(MiniSteelworksMES.Data.Transaction);
+            this.originModelBindingSource.DataSource = typeof(MiniSteelworksMES.Data.OriginModel);
             // 
             // PurchaceFromOriginQuantity
             // 
@@ -73,7 +75,7 @@ namespace MesUI
             this.Name = "PurchaceFromOriginQuantity";
             this.Text = "PurchaceFromOriginQuantity";
             ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.originModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -84,7 +86,7 @@ namespace MesUI
         private DevExpress.XtraMap.ImageLayer imageLayer1;
         private DevExpress.XtraMap.BingMapDataProvider bingMapDataProvider1;
         private DevExpress.XtraMap.VectorItemsLayer vectorItemsLayer1;
-        private DevExpress.XtraMap.PieChartDataAdapter pieChartDataAdapter1;
-        private System.Windows.Forms.BindingSource transactionBindingSource;
+        private DevExpress.XtraMap.BubbleChartDataAdapter bubbleChartDataAdapter1;
+        private System.Windows.Forms.BindingSource originModelBindingSource;
     }
 }

@@ -177,22 +177,46 @@ namespace MiniSteelworksMES.Data
         //    }
         //}
 
+        //public List<TransactionModel> GetModels()
+        //{
+        //    using (MesEntities context = (MesEntities)DbContextCreator.Create())
+        //    {
+        //        Dictionary<int, string> resourceNames = context.Resources.ToDictionary(x => x.ResourceId, x => x.Name);
+
+        //        var query = from x in context.Transactions
+        //                    group x by x.ResourceId into g
+        //                    select g;
+
+        //        List<TransactionModel> models = new List<TransactionModel>();
+        //        foreach (var @group in query)
+        //        {
+        //            TransactionModel model = new TransactionModel(group.Key, group.Sum(x => x.Quantity));//key는 위에서 만든 g의 ResourceId
+        //            model.ResourceName = resourceNames[model.ResourceId];
+
+        //            models.Add(model);
+        //        }
+
+        //        return models;
+        //    }
+        //}
+
         public List<TransactionModel> GetModels()
         {
             using (MesEntities context = (MesEntities)DbContextCreator.Create())
             {
                 Dictionary<int, string> resourceNames = context.Resources.ToDictionary(x => x.ResourceId, x => x.Name);
+                //Dictionary<int, DateTime> period = context.Transactions.ToDictionary(x => x.ResourceId, x => x.Date);
 
-                var query = from x in context.Transactions
-                            group x by x.ResourceId into g
+                var query = from x in context.Transactions //Transaction 요소를 모두 가져와
+                            group x by x.ResourceId into g //ResourceId별로 정렬
                             select g;
 
                 List<TransactionModel> models = new List<TransactionModel>();
+
                 foreach (var @group in query)
                 {
                     TransactionModel model = new TransactionModel(group.Key, group.Sum(x => x.Quantity));//key는 위에서 만든 g의 ResourceId
                     model.ResourceName = resourceNames[model.ResourceId];
-
                     models.Add(model);
                 }
 
@@ -200,5 +224,31 @@ namespace MiniSteelworksMES.Data
             }
         }
 
+        public List<OriginModel> GetModels2()
+        {
+            using (MesEntities context = (MesEntities)DbContextCreator.Create())
+            {
+                Dictionary<int, string> originName = context.Origins.ToDictionary(x => x.OriginId, x => x.Name);
+                Dictionary<int, double> longgitud = context.Origins.ToDictionary(x => x.OriginId, x => x.Longgitude_Member);
+                Dictionary<int, double> latitude = context.Origins.ToDictionary(x => x.OriginId, x => x.Latitude_Member);
+
+                var query = from x in context.Transactions //Transaction 요소를 모두 가져와
+                            group x by x.OriginId into g //OriginId별로 정렬
+                            select g;
+
+                List < OriginModel > models = new List<OriginModel>();
+
+                foreach (var @group in query)
+                {
+                    OriginModel model = new OriginModel(group.Key, group.Sum(x => x.Quantity));//key는 위에서 만든 g의 ResourceId
+                    model.OriginName = originName[model.OriginId];
+                    model.Longgitude = longgitud[model.OriginId];
+                    model.Latitude = latitude[model.OriginId];
+                    models.Add(model);
+                }
+
+                return models;
+            }
+        }
     }
 }
