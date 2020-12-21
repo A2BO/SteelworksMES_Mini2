@@ -48,7 +48,7 @@ Microsoft MS-SQL Server 2019
 
 #### 원자재별로 현시점까지 구매한 비율을 Pie Chart로 표시
 
-![광물별 구매비율](https://user-images.githubusercontent.com/74530618/102707871-0a6eae80-42e2-11eb-8ac7-09f24ecedb0c.jpg)
+![광물별 구매비율](https://user-images.githubusercontent.com/74530618/102734812-190da200-4384-11eb-85fb-6eb538751b69.jpg)
 
 
 ### 3. 원산지별 광물 구매량
@@ -96,4 +96,4 @@ Microsoft MS-SQL Server 2019
 ## 원인
  1. 차트 데이터에 Resource테이블의 Name컬럼이 추가되지않음
 ## 해결 방법
-
+ 1. 딕셔너리 resourceNames를 생성해 Argument에 ResourceName 입력
