@@ -39,6 +39,11 @@ namespace MesUI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+#if DEBUG
+            loginState = true;
+            ShowChildForm(new ProductSalesQuantityForm());
+#else
             LogInForm1 loginForm = new LogInForm1();
             loginForm.MdiParent = this;
             dictForm.Add("loginForm", loginForm);
@@ -51,6 +56,7 @@ namespace MesUI
             dictForm.Add("loginForm2", login2Form);
 
             loginForm.Show();
+#endif
         }
         public void ShowForm(string formName)
         {
@@ -124,7 +130,7 @@ namespace MesUI
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowChildForm(new ProductSalesQuantity());
+            ShowChildForm(new ProductSalesQuantityForm());
         }
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

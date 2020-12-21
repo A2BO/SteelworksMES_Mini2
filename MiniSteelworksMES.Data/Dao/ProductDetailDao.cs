@@ -51,7 +51,7 @@ namespace MiniSteelworksMES.Data.Dao
 
             
         }
-        //같은 결과가나오는 코드
+        
         //public List<ProductSalesQuantityModel2> GetModels()
         //{
         //    {

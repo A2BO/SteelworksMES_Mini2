@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraCharts;
+using DevExpress.XtraCharts.Native;
+using MesUI.Mini2;
 using MiniSteelworksMES.Data;
 using MiniSteelworksMES.Data.Dao;
 using System;
@@ -14,9 +16,9 @@ using System.Windows.Forms;
 namespace MesUI
 {
        
-    public partial class ProductSalesQuantity : Form
+    public partial class ProductSalesQuantityForm : Form
     {
-        public ProductSalesQuantity()
+        public ProductSalesQuantityForm()
         {
             InitializeComponent();
         }
@@ -32,8 +34,14 @@ namespace MesUI
         }
         private void chartControl1_SelectedItemsChanged(object sender, SelectedItemsChangedEventArgs e)
         {
-            MessageBox.Show("Selected item - " + (e.NewItems[0] as SeriesPoint).Argument);
+            ProductSalesQuantityModel2 selectedItem = chartControl1.SelectedItems[0] as ProductSalesQuantityModel2;
+
+            if (selectedItem == null)
+                return;
+
+            StainlessForm newStainless = new StainlessForm(this, selectedItem);
+            newStainless.Show();
+          
         }
-        public bool RuntimeHitTesting { get; set; }
     }
 }

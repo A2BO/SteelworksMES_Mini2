@@ -1,7 +1,7 @@
 ﻿
 namespace MesUI
 {
-    partial class ProductSalesQuantity
+    partial class ProductSalesQuantityForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,14 +34,18 @@ namespace MesUI
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
             DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.productSalesQuantityModel2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            ((System.ComponentModel.ISupportInitialize)(this.productSalesQuantityModel2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productSalesQuantityModel2BindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // productSalesQuantityModel2BindingSource
+            // 
+            this.productSalesQuantityModel2BindingSource.DataSource = typeof(MiniSteelworksMES.Data.ProductSalesQuantityModel2);
             // 
             // chartControl1
             // 
@@ -49,10 +53,13 @@ namespace MesUI
             legend1.Name = "Legend 1";
             this.chartControl1.Legends.AddRange(new DevExpress.XtraCharts.Legend[] {
             legend1});
-            this.chartControl1.Location = new System.Drawing.Point(6, 16);
+            this.chartControl1.Location = new System.Drawing.Point(11, 14);
             this.chartControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chartControl1.Name = "chartControl1";
+            this.chartControl1.SelectionMode = DevExpress.XtraCharts.ElementSelectionMode.Single;
+            this.chartControl1.SeriesSelectionMode = DevExpress.XtraCharts.SeriesSelectionMode.Point;
             series1.ArgumentDataMember = "ProductName";
+            series1.DataSource = this.productSalesQuantityModel2BindingSource;
             series1.LegendTextPattern = "{A}";
             series1.Name = "Series 1";
             series1.ValueDataMembersSerializable = "Amount";
@@ -64,10 +71,7 @@ namespace MesUI
             this.chartControl1.SeriesTemplate.View = pieSeriesView2;
             this.chartControl1.Size = new System.Drawing.Size(887, 532);
             this.chartControl1.TabIndex = 0;
-            // 
-            // productSalesQuantityModel2BindingSource
-            // 
-            this.productSalesQuantityModel2BindingSource.DataSource = typeof(MiniSteelworksMES.Data.ProductSalesQuantityModel2);
+            this.chartControl1.SelectedItemsChanged += new DevExpress.XtraCharts.SelectedItemsChangedEventHandler(this.chartControl1_SelectedItemsChanged);
             // 
             // ProductSalesQuantity
             // 
@@ -78,11 +82,11 @@ namespace MesUI
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProductSalesQuantity";
             this.Text = "제품군별 판매량";
+            ((System.ComponentModel.ISupportInitialize)(this.productSalesQuantityModel2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productSalesQuantityModel2BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
