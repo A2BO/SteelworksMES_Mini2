@@ -35,12 +35,19 @@ namespace MesUI
             DevExpress.XtraCharts.Pie3DSeriesView pie3DSeriesView1 = new DevExpress.XtraCharts.Pie3DSeriesView();
             DevExpress.XtraCharts.Pie3DSeriesView pie3DSeriesView2 = new DevExpress.XtraCharts.Pie3DSeriesView();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.dateTimeOffsetEdit1 = new DevExpress.XtraEditors.DateTimeOffsetEdit();
+            this.dateTimeOffsetEdit2 = new DevExpress.XtraEditors.DateTimeOffsetEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.transactionModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(simpleDiagram3D1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeOffsetEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeOffsetEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,9 +57,9 @@ namespace MesUI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartControl1.DataSource = this.transactionModelBindingSource;
-            simpleDiagram3D1.RotationMatrixSerializable = "0.929845783548128;0.0797581022255121;-0.359201146917927;0;-0.235887710751905;0.87" +
-    "8436294604622;-0.415579913178595;0;0.282389459318146;0.471156366242343;0.8356242" +
-    "40801639;0;0;0;0;1";
+            simpleDiagram3D1.RotationMatrixSerializable = "-0.109879788862754;0.92174893626836;-0.371894246376093;0;-0.880061361387495;0.083" +
+    "6811774374064;0.467428562173401;0;0.461972328383723;0.378650708477949;0.80200075" +
+    "3601196;0;0;0;0;1";
             this.chartControl1.Diagram = simpleDiagram3D1;
             this.chartControl1.Location = new System.Drawing.Point(12, 12);
             this.chartControl1.Name = "chartControl1";
@@ -66,7 +73,55 @@ namespace MesUI
             this.chartControl1.SeriesTemplate.View = pie3DSeriesView2;
             this.chartControl1.Size = new System.Drawing.Size(749, 618);
             this.chartControl1.TabIndex = 0;
-            this.chartControl1.Click += new System.EventHandler(this.chartControl1_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Location = new System.Drawing.Point(686, 457);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(40, 14);
+            this.labelControl1.TabIndex = 1;
+            this.labelControl1.Text = "시작날짜";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Location = new System.Drawing.Point(686, 503);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(40, 14);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "종료날짜";
+            // 
+            // dateTimeOffsetEdit1
+            // 
+            this.dateTimeOffsetEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimeOffsetEdit1.EditValue = null;
+            this.dateTimeOffsetEdit1.Location = new System.Drawing.Point(651, 477);
+            this.dateTimeOffsetEdit1.Name = "dateTimeOffsetEdit1";
+            this.dateTimeOffsetEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateTimeOffsetEdit1.Size = new System.Drawing.Size(100, 20);
+            this.dateTimeOffsetEdit1.TabIndex = 3;
+            // 
+            // dateTimeOffsetEdit2
+            // 
+            this.dateTimeOffsetEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimeOffsetEdit2.EditValue = null;
+            this.dateTimeOffsetEdit2.Location = new System.Drawing.Point(651, 523);
+            this.dateTimeOffsetEdit2.Name = "dateTimeOffsetEdit2";
+            this.dateTimeOffsetEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateTimeOffsetEdit2.Size = new System.Drawing.Size(100, 20);
+            this.dateTimeOffsetEdit2.TabIndex = 4;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.Location = new System.Drawing.Point(667, 549);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 5;
+            this.simpleButton1.Text = "조회";
             // 
             // transactionModelBindingSource
             // 
@@ -77,6 +132,11 @@ namespace MesUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 642);
+            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.dateTimeOffsetEdit2);
+            this.Controls.Add(this.dateTimeOffsetEdit1);
+            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.chartControl1);
             this.Name = "ResourcePurchaceQuantity";
             this.Text = "광물별 구매비율";
@@ -85,8 +145,11 @@ namespace MesUI
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeOffsetEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeOffsetEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionModelBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -94,5 +157,10 @@ namespace MesUI
 
         private DevExpress.XtraCharts.ChartControl chartControl1;
         private System.Windows.Forms.BindingSource transactionModelBindingSource;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.DateTimeOffsetEdit dateTimeOffsetEdit1;
+        private DevExpress.XtraEditors.DateTimeOffsetEdit dateTimeOffsetEdit2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

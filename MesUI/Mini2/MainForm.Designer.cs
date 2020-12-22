@@ -150,7 +150,7 @@ namespace MesUI
             // 
             // barButtonItem9
             // 
-            this.barButtonItem9.Caption = "제품군별 판매량";
+            this.barButtonItem9.Caption = "제품군별 판매비율";
             this.barButtonItem9.Id = 10;
             this.barButtonItem9.Name = "barButtonItem9";
             this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);

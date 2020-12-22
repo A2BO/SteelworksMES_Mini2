@@ -28,6 +28,7 @@ namespace MiniSteelworksMES.Data
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Expense> Expenses { get; set; }
         public virtual DbSet<ExpenseCategory> ExpenseCategories { get; set; }
+        public virtual DbSet<GrossProfit> GrossProfits { get; set; }
         public virtual DbSet<GrowthRate> GrowthRates { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Origin> Origins { get; set; }

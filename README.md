@@ -48,7 +48,7 @@ Microsoft MS-SQL Server 2019
 
 #### 원자재별로 현시점까지 구매한 비율을 Pie Chart로 표시
 
-![광물별 구매비율](https://user-images.githubusercontent.com/74530618/102707871-0a6eae80-42e2-11eb-8ac7-09f24ecedb0c.jpg)
+![광물별 구매비율](https://user-images.githubusercontent.com/74530618/102734812-190da200-4384-11eb-85fb-6eb538751b69.jpg)
 
 
 ### 3. 원산지별 광물 구매량
@@ -57,12 +57,13 @@ Microsoft MS-SQL Server 2019
 
 -버블 클릭시 광물별 상세 판매량을 바차트로 표시
 
+![원산지별 광물구매량](https://user-images.githubusercontent.com/74530618/102748838-4ec38280-43a6-11eb-8b52-5aa9858bda57.jpg)
 
-### 4. 제품군별 판매량
+### 4. 제품군별 판매비율
 
 #### Product 테이블의 제품군별 판매량을 Pie Chart로 표시
 
-![제품군별 판매량](https://user-images.githubusercontent.com/74530618/102708008-1c048600-42e3-11eb-9eb8-a52e57e8c008.jpg)
+![제품군별 구매비율](https://user-images.githubusercontent.com/74530618/102744486-4286f780-439d-11eb-9848-595f11b41e75.jpg)
 
 
 ### 5. 기간당 매출이익
@@ -96,4 +97,4 @@ Microsoft MS-SQL Server 2019
 ## 원인
  1. 차트 데이터에 Resource테이블의 Name컬럼이 추가되지않음
 ## 해결 방법
-
+ 1. 딕셔너리 resourceNames를 생성해 Argument에 ResourceName 입력

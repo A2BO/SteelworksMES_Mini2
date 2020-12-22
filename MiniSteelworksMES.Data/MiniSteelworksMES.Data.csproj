@@ -101,6 +101,9 @@
     <Compile Include="ExpenseCategory.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>
+    <Compile Include="GrossProfit.cs">
+      <DependentUpon>Mes.tt</DependentUpon>
+    </Compile>
     <Compile Include="GrowthRate.cs">
       <DependentUpon>Mes.tt</DependentUpon>
     </Compile>

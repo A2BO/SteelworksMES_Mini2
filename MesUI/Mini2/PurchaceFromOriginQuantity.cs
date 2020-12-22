@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DevExpress.XtraMap;
+using MiniSteelworksMES.Data.Dao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,13 @@ namespace MesUI
         public PurchaceFromOriginQuantity()
         {
             InitializeComponent();
+
+        }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            originModelBindingSource.DataSource = Dao.Transaction.GetModels2();
         }
     }
 }

@@ -10,24 +10,21 @@ namespace MiniSteelworksMES.Data
     {
         //private double? longgitude_Member;
 
-        public OriginModel(int id, int quantity, string origin)
+        public OriginModel(int id, int quantity/*, double longgitude_Member, double latitude_Member*/)
         {
-            ResourceId = id;
+            OriginId = id;
             Quantity = quantity;
-            //Longgitude = (double)longgitude_Member;
-            //Latitude = (double)Latitude_Member;
-            Origin = origin;
-
+            //Longgitude = longgitude_Member;
+            //Latitude = latitude_Member;
         }
-        public int OriginCount { get; set; }
 
-        public string Origin { get; set; }
+        public string OriginName { get; set; }
 
-        //public double Longgitude { get; set; }
+        public double Longgitude { get; set; }
 
-        //public double Latitude { get; set; }
+        public double Latitude { get; set; }
 
-        public int ResourceId { get; set; }
+        public int OriginId { get; set; }
 
         public int Quantity { get; set; }
     }
