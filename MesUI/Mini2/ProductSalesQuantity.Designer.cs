@@ -69,11 +69,11 @@ namespace MesUI
             series1.View = pieSeriesView1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] 
             {
-                series2
+                series1
             };
             this.chartControl1.SeriesTemplate.ArgumentDataMember = "ProductName";
             this.chartControl1.SeriesTemplate.ValueDataMembersSerializable = "Amount";
-            this.chartControl1.SeriesTemplate.View = pieSeriesView4;
+            this.chartControl1.SeriesTemplate.View = pieSeriesView2;
             this.chartControl1.Size = new System.Drawing.Size(815, 447);
             this.chartControl1.TabIndex = 0;
             this.chartControl1.SelectedItemsChanged += new DevExpress.XtraCharts.SelectedItemsChangedEventHandler(this.chartControl1_SelectedItemsChanged);
