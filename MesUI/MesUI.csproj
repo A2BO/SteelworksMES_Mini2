@@ -94,35 +94,29 @@
     <Compile Include="Mini2\ExpenseForm.Designer.cs">
       <DependentUpon>ExpenseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mini1\Form1.cs">
+    <Compile Include="Mini2\GrossProfitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mini1\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Mini2\GrossProfitForm.Designer.cs">
+      <DependentUpon>GrossProfitForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mini2\GrossProfit.cs">
+    <Compile Include="Mini2\GrowthRateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mini2\GrossProfit.Designer.cs">
-      <DependentUpon>GrossProfit.cs</DependentUpon>
+    <Compile Include="Mini2\GrowthRateForm.Designer.cs">
+      <DependentUpon>GrowthRateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mini2\GrowthRate.cs">
+    <Compile Include="Mini1\LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mini2\GrowthRate.Designer.cs">
-      <DependentUpon>GrowthRate.cs</DependentUpon>
+    <Compile Include="Mini1\LogInForm.Designer.cs">
+      <DependentUpon>LogInForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mini1\LogInForm1.cs">
+    <Compile Include="Mini1\AnnouncementForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mini1\LogInForm1.Designer.cs">
-      <DependentUpon>LogInForm1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mini1\LogInForm2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Mini1\LogInForm2.Designer.cs">
-      <DependentUpon>LogInForm2.cs</DependentUpon>
+    <Compile Include="Mini1\AnnouncementForm.Designer.cs">
+      <DependentUpon>AnnouncementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mini2\MainForm.cs">
       <SubType>Form</SubType>
@@ -149,23 +143,29 @@
     <Compile Include="Mini1\OrderModify.Designer.cs">
       <DependentUpon>OrderModify.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mini2\ProductList.cs">
+    <Compile Include="Mini2\OriginDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mini2\ProductList.Designer.cs">
-      <DependentUpon>ProductList.cs</DependentUpon>
+    <Compile Include="Mini2\OriginDetailForm.Designer.cs">
+      <DependentUpon>OriginDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mini2\ProductSalesByBuyer.cs">
+    <Compile Include="Mini2\ProductListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mini2\ProductSalesByBuyer.Designer.cs">
-      <DependentUpon>ProductSalesByBuyer.cs</DependentUpon>
+    <Compile Include="Mini2\ProductListForm.Designer.cs">
+      <DependentUpon>ProductListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mini2\ProductSalesQuantity.cs">
+    <Compile Include="Mini2\SaleToForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mini2\ProductSalesQuantity.Designer.cs">
-      <DependentUpon>ProductSalesQuantity.cs</DependentUpon>
+    <Compile Include="Mini2\SaleToForm.Designer.cs">
+      <DependentUpon>SaleToForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mini2\ProductSalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mini2\ProductSalesForm.Designer.cs">
+      <DependentUpon>ProductSalesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mini2\StainlessForm.cs">
       <SubType>Form</SubType>
@@ -175,36 +175,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Mini2\PurchaceFromOriginQuantity.cs">
+    <Compile Include="Mini2\OriginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mini2\PurchaceFromOriginQuantity.Designer.cs">
-      <DependentUpon>PurchaceFromOriginQuantity.cs</DependentUpon>
+    <Compile Include="Mini2\OriginForm.Designer.cs">
+      <DependentUpon>OriginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ResourceInfo.cs" />
-    <Compile Include="Mini2\ResourcePurchaceQuantity.cs">
+    <Compile Include="Mini2\PurchasedRatioForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mini2\ResourcePurchaceQuantity.Designer.cs">
-      <DependentUpon>ResourcePurchaceQuantity.cs</DependentUpon>
+    <Compile Include="Mini2\PurchasedRatioForm.Designer.cs">
+      <DependentUpon>PurchasedRatioForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mini1\ResourceQuoteForm.cs">
+    <Compile Include="Mini2\ResourceQuoteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mini1\ResourceQuoteForm.Designer.cs">
+    <Compile Include="Mini2\ResourceQuoteForm.Designer.cs">
       <DependentUpon>ResourceQuoteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mini2\ResourceQuote_Dev.cs">
+    <Compile Include="Mini2\SalesPerformanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mini2\ResourceQuote_Dev.Designer.cs">
-      <DependentUpon>ResourceQuote_Dev.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mini2\SalesPerformence.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Mini2\SalesPerformence.Designer.cs">
-      <DependentUpon>SalesPerformence.cs</DependentUpon>
+    <Compile Include="Mini2\SalesPerformanceForm.Designer.cs">
+      <DependentUpon>SalesPerformanceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mini1\StaffManagement.cs">
       <SubType>Form</SubType>
@@ -248,23 +242,20 @@
     <Compile Include="Mini1\WarehouseRegister.Designer.cs">
       <DependentUpon>WarehouseRegister.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Mini1\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Mini1\LogInForm.resx">
+      <DependentUpon>LogInForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mini1\LogInForm1.resx">
-      <DependentUpon>LogInForm1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mini1\LogInForm2.resx">
-      <DependentUpon>LogInForm2.cs</DependentUpon>
+    <EmbeddedResource Include="Mini1\AnnouncementForm.resx">
+      <DependentUpon>AnnouncementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mini2\ExpenseForm.resx">
       <DependentUpon>ExpenseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mini2\GrossProfit.resx">
-      <DependentUpon>GrossProfit.cs</DependentUpon>
+    <EmbeddedResource Include="Mini2\GrossProfitForm.resx">
+      <DependentUpon>GrossProfitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mini2\GrowthRate.resx">
-      <DependentUpon>GrowthRate.cs</DependentUpon>
+    <EmbeddedResource Include="Mini2\GrowthRateForm.resx">
+      <DependentUpon>GrowthRateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mini2\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -278,17 +269,20 @@
     <EmbeddedResource Include="Mini1\OrderModify.resx">
       <DependentUpon>OrderModify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mini2\ProductSalesQuantity.resx">
-      <DependentUpon>ProductSalesQuantity.cs</DependentUpon>
+    <EmbeddedResource Include="Mini2\ProductSalesForm.resx">
+      <DependentUpon>ProductSalesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mini2\PurchaceFromOriginQuantity.resx">
-      <DependentUpon>PurchaceFromOriginQuantity.cs</DependentUpon>
+    <EmbeddedResource Include="Mini2\OriginForm.resx">
+      <DependentUpon>OriginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mini2\ResourcePurchaceQuantity.resx">
-      <DependentUpon>ResourcePurchaceQuantity.cs</DependentUpon>
+    <EmbeddedResource Include="Mini2\PurchasedRatioForm.resx">
+      <DependentUpon>PurchasedRatioForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mini2\SalesPerformence.resx">
-      <DependentUpon>SalesPerformence.cs</DependentUpon>
+    <EmbeddedResource Include="Mini2\SalesPerformanceForm.resx">
+      <DependentUpon>SalesPerformanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mini2\SaleToForm.resx">
+      <DependentUpon>SaleToForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mini2\StainlessForm.resx">
       <DependentUpon>StainlessForm.cs</DependentUpon>
@@ -303,11 +297,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Mini1\ResourceQuoteForm.resx">
+    <EmbeddedResource Include="Mini2\ResourceQuoteForm.resx">
       <DependentUpon>ResourceQuoteForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mini2\ResourceQuote_Dev.resx">
-      <DependentUpon>ResourceQuote_Dev.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mini1\StaffManagement.resx">
       <DependentUpon>StaffManagement.cs</DependentUpon>

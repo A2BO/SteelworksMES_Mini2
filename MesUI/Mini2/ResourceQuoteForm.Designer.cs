@@ -1,7 +1,7 @@
 ﻿
 namespace MesUI
 {
-    partial class ResourceQuote_Dev
+    partial class ResourceQuoteForm
     {
         /// <summary>
         /// Required designer variable.

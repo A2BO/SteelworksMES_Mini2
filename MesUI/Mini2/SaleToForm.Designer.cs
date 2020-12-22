@@ -1,7 +1,7 @@
 ﻿
 namespace MesUI
 {
-    partial class ProductSalesByBuyer
+    partial class SaleToForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,17 @@ namespace MesUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // SaleToForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ProductSalesByBuyer";
+            this.Name = "SaleToForm";
+            this.Text = "거래처별 제품 판매량";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

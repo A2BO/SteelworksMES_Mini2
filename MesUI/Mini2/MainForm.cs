@@ -23,7 +23,7 @@ namespace MesUI
 
         public void HideLoginForm()
         {
-            LogInForm1 form = (LogInForm1)dictForm["loginForm"];
+            LogInForm form = (LogInForm)dictForm["loginForm"];
             form.Hide();
         }
 
@@ -31,7 +31,7 @@ namespace MesUI
         {
             if (index == 10)
             {
-                LogInForm2 form = (LogInForm2)dictForm["loginForm2"];
+                AnnouncementForm form = (AnnouncementForm)dictForm["loginForm2"];
                 form.Show();
                 form.Activate();
             }
@@ -42,7 +42,7 @@ namespace MesUI
 
 #if DEBUG
             loginState = true;
-            ShowChildForm(new ProductSalesQuantityForm());
+            ShowChildForm(new ProductSalesForm());
 #else
             LogInForm1 loginForm = new LogInForm1();
             loginForm.MdiParent = this;
@@ -102,7 +102,7 @@ namespace MesUI
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowChildForm(new ResourceQuote_Dev());
+            ShowChildForm(new ResourceQuoteForm());
         }
 
         private void RibbonControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,32 +115,32 @@ namespace MesUI
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowChildForm(new ProductList());
+            ShowChildForm(new ProductListForm());
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowChildForm(new ResourcePurchaceQuantity());
+            ShowChildForm(new PurchasedRatioForm());
         }
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowChildForm(new PurchaceFromOriginQuantity());
+            ShowChildForm(new OriginForm());
         }
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowChildForm(new ProductSalesQuantityForm());
+            ShowChildForm(new ProductSalesForm());
         }
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowChildForm(new ProductSalesByBuyer());
+            ShowChildForm(new SaleToForm());
         }
 
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowChildForm(new GrossProfit());
+            ShowChildForm(new GrossProfitForm());
         }
 
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -150,12 +150,12 @@ namespace MesUI
 
         private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowChildForm(new GrowthRate());
+            ShowChildForm(new GrowthRateForm());
         }
 
         private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowChildForm(new SalesPerformence());
+            ShowChildForm(new SalesPerformanceForm());
         }
     }
 }

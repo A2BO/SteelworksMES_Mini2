@@ -1,7 +1,7 @@
 ﻿
 namespace MesUI
 {
-    partial class ProductList
+    partial class ProductListForm
     {
         /// <summary>
         /// Required designer variable.

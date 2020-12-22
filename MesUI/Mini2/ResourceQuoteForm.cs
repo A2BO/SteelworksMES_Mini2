@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace MesUI
 {
-    public partial class ResourcePurchaceQuantity : Form
+    public partial class ResourceQuoteForm : Form
     {
-        public ResourcePurchaceQuantity()
+        public ResourceQuoteForm()
         {
             InitializeComponent();
         }
@@ -23,21 +23,23 @@ namespace MesUI
         {
             base.OnLoad(e);
 
-            transactionModelBindingSource.DataSource = Dao.Transaction.GetModels();
+            if (DesignMode)
+                return;
 
+            List<Resource_Quote> list = Dao.Resource_Quote.GetAll();
+            resourceQuoteBindingSource.DataSource = list;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            List<Resource_Quote> list = Dao.Resource_Quote.GetByDate(dateEdit1.DateTime, dateEdit2.DateTime);
 
-            List<Transaction> list = Dao.Transaction.GetByDate(dateTimeOffsetEdit1.DateTimeOffset, dateTimeOffsetEdit2.DateTimeOffset);
-
-            if (dateTimeOffsetEdit1.DateTimeOffset > dateTimeOffsetEdit2.DateTimeOffset)
+            if (dateEdit1.DateTime > dateEdit2.DateTime)
             {
                 MessageBox.Show("기간이 잘못되었음", "오류");
             }
 
-            if (dateTimeOffsetEdit1.DateTimeOffset <= dateTimeOffsetEdit2.DateTimeOffset && list.Count == 0)
+            if (dateEdit1.DateTime <= dateEdit2.DateTime && list.Count == 0)
             {
                 MessageBox.Show("조회 기간에 시세 데이터가 없습니다.");
             }
@@ -46,7 +48,7 @@ namespace MesUI
                 chartControl1.Series[i].ArgumentDataMember = "date";
             }
 
-            transactionModelBindingSource.DataSource = list;
+            resourceQuoteBindingSource.DataSource = list;
         }
     }
 }

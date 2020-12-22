@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MesUI
 {
-    public partial class LogInForm2 : Form
+    public partial class AnnouncementForm : Form
     {
-        public LogInForm2()
+        public AnnouncementForm()
         {
             InitializeComponent();
         }

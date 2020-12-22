@@ -1,7 +1,7 @@
 ﻿
 namespace MesUI
 {
-    partial class GrossProfit
+    partial class GrossProfitForm
     {
         /// <summary>
         /// Required designer variable.
@@ -86,15 +86,15 @@ namespace MesUI
             this.fieldCategory.FieldName = "Category";
             this.fieldCategory.Name = "fieldCategory";
             // 
-            // GrossProfit
+            // GrossProfitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 528);
             this.Controls.Add(this.pivotGridControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "GrossProfit";
-            this.Text = "GrossProfit";
+            this.Name = "GrossProfitForm";
+            this.Text = "매출이익";
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grossProfitBindingSource)).EndInit();
             this.ResumeLayout(false);

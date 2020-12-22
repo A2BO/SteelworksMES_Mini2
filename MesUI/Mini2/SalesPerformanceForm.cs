@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace MesUI
 {
-    public partial class SalesPerformence : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class SalesPerformanceForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public SalesPerformence()
+        public SalesPerformanceForm()
         {
             InitializeComponent();
         }

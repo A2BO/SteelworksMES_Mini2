@@ -1,7 +1,7 @@
 ﻿
 namespace MesUI
 {
-    partial class ResourcePurchaceQuantity
+    partial class PurchasedRatioForm
     {
         /// <summary>
         /// Required designer variable.

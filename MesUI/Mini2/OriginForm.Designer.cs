@@ -1,7 +1,7 @@
 ﻿
 namespace MesUI
 {
-    partial class PurchaceFromOriginQuantity
+    partial class OriginForm
     {
         /// <summary>
         /// Required designer variable.

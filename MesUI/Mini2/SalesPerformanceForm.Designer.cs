@@ -1,7 +1,7 @@
 ﻿
 namespace MesUI
 {
-    partial class SalesPerformence
+    partial class SalesPerformanceForm
     {
         /// <summary>
         /// Required designer variable.
@@ -60,14 +60,14 @@ namespace MesUI
             // 
             this.bdsModel.DataSource = typeof(MiniSteelworksMES.Data.TheModel);
             // 
-            // SalesPerformence
+            // SalesPerformanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 525);
             this.Controls.Add(this.chartControl1);
-            this.Name = "SalesPerformence";
-            this.Text = "SalesPerformence";
+            this.Name = "SalesPerformanceForm";
+            this.Text = "영업실적";
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsModel)).EndInit();

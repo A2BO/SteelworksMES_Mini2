@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MesUI
 {
-    public partial class ProductSalesByBuyer : Form
+    public partial class SaleToForm : Form
     {
-        public ProductSalesByBuyer()
+        public SaleToForm()
         {
             InitializeComponent();
         }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MesUI
+namespace MesUI.Mini2
 {
-    public partial class ProductList : Form
+    public partial class OriginDetailForm : Form
     {
-        public ProductList()
+        public OriginDetailForm()
         {
             InitializeComponent();
         }

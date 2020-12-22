@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace MesUI
 {
-    public partial class PurchaceFromOriginQuantity : Form
+    public partial class OriginForm : Form
     {
-        public PurchaceFromOriginQuantity()
+        public OriginForm()
         {
             InitializeComponent();
 

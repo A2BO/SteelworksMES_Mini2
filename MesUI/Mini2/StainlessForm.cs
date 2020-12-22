@@ -14,7 +14,7 @@ namespace MesUI.Mini2
 {
     public partial class StainlessForm : DevExpress.XtraEditors.XtraForm
     {
-        public StainlessForm(ProductSalesQuantityForm quantityForm, ProductSalesQuantityModel2 model)
+        public StainlessForm(ProductSalesForm quantityForm, ProductSalesQuantityModel2 model)
         {
             InitializeComponent();
 
@@ -22,7 +22,7 @@ namespace MesUI.Mini2
             Model = model;
         }
 
-        public ProductSalesQuantityForm QuantityForm { get;  }
+        public ProductSalesForm QuantityForm { get;  }
 
         public ProductSalesQuantityModel2 Model { get; }
 

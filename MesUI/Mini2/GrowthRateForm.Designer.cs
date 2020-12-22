@@ -1,7 +1,7 @@
 ﻿
 namespace MesUI
 {
-    partial class GrowthRate
+    partial class GrowthRateForm
     {
         /// <summary>
         /// Required designer variable.

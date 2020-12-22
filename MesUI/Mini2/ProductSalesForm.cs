@@ -16,9 +16,9 @@ using System.Windows.Forms;
 namespace MesUI
 {
        
-    public partial class ProductSalesQuantityForm : Form
+    public partial class ProductSalesForm : Form
     {
-        public ProductSalesQuantityForm()
+        public ProductSalesForm()
         {
             InitializeComponent();
         }

@@ -13,9 +13,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace MesUI
 {
-    public partial class LogInForm1 : Form
+    public partial class LogInForm : Form
     {
-        public LogInForm1()
+        public LogInForm()
         {
             InitializeComponent();
         }

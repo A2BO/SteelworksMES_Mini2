@@ -1,7 +1,7 @@
 ﻿
 namespace MesUI
 {
-    partial class LogInForm1
+    partial class LogInForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace MesUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInForm1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInForm));
             this.loginButton = new System.Windows.Forms.Button();
             this.usrIdText = new System.Windows.Forms.TextBox();
             this.passwdText = new System.Windows.Forms.TextBox();

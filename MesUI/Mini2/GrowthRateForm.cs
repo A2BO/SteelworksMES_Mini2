@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace MesUI
 {
-    public partial class GrowthRate : Form
+    public partial class GrowthRateForm : Form
     {
-        public GrowthRate()
+        public GrowthRateForm()
         {
             InitializeComponent();
         }

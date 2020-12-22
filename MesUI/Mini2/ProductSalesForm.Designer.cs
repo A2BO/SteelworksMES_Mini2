@@ -1,7 +1,7 @@
 ﻿
 namespace MesUI
 {
-    partial class ProductSalesQuantityForm
+    partial class ProductSalesForm
     {
         /// <summary>
         /// Required designer variable.
